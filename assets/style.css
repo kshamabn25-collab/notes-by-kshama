@@ -1,4 +1,8 @@
 /* ===== Base ===== */
+img {
+  display: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -84,6 +88,12 @@ main {
   margin: auto;
 }
 
+main {
+  max-width: 720px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
 .content {
   max-width: 760px;
   margin: auto;
@@ -126,6 +136,30 @@ main {
   margin-top: 0;
 }
 
+.bucket.pm {
+  background: #eef2ff;
+  border-left: 6px solid #4f46e5;
+}
+
+.bucket.field {
+  background: #ecfeff;
+  border-left: 6px solid #0d9488;
+}
+
+.bucket.reflect {
+  background: #fff1f2;
+  border-left: 6px solid #e11d48;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
 /* ===== Articles ===== */
 .article-list {
   list-style: none;
@@ -155,5 +189,45 @@ footer {
   text-align: center;
   padding: 40px;
   color: #6b7280;
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+}
+
+.logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+.bucket {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bucket:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+article p {
+  margin-bottom: 1.4em;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+.takeaway {
+  margin-top: 40px;
+  font-style: italic;
+  font-size: 1.1em;
+  border-left: 4px solid #ccc;
+  padding-left: 16px;
+  color: #333;
 }
 
