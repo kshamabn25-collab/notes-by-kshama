@@ -1,94 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Notes by Kshama</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<header>
-  <div class="logo">Notes by Kshama</div>
-  <nav>
-    <a href="index.html" class="active">Home</a>
+<nav>
+  <a href="index.html" class="logo">Notes by Kshama</a>
+
+  <div class="nav-links">
     <div class="dropdown">
-      <button class="dropbtn">Posts ▾</button>
+      <button class="dropbtn">Buckets ▼</button>
       <div class="dropdown-content">
-        <a href="buckets/work-in-practice.html">Work in Practice</a>
-        <a href="buckets/lessons-in-progress.html">Lessons in Progress</a>
-        <a href="buckets/teaching-notes.html">Teaching Notes</a>
-        <a href="buckets/things-i-use.html">Things I Use</a>
-        <a href="buckets/life-leadership.html">Life & Leadership</a>
+        <a href="buckets/pm.html">The PM Diaries</a>
+        <a href="buckets/field.html">Lessons from the Field</a>
+        <a href="buckets/reflect.html">Reflections & Notes</a>
+        <a href="buckets/tools.html">Things I Use</a>
+        <a href="buckets/leadership.html">Life & Leadership</a>
       </div>
     </div>
     <a href="about.html">About</a>
-  </nav>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Welcome to My Story Archive</h1>
+  <p class="subtitle">Discover stories, reflections, and lessons from my journey in Project Management, Product, and Life.</p>
 </header>
 
 <main>
+  <section class="buckets">
+    <!-- Keep buckets on home page for visual preview -->
+    <div class="bucket pm">
+      <h2>The PM Diaries</h2>
+      <p>Stories from real PM experiences that shaped my thinking.</p>
+      <a href="buckets/pm.html">Explore →</a>
+    </div>
 
-<section class="hero">
-  <img src="assets/images/profile.jpg" alt="Kshama" />
-  <div>
-    <h1>Hi, I’m Kshama</h1>
-    <p>
-      I work across PMO, product, and teaching.  
-      This space captures how I think, work, learn, and share.
-    </p>
-  </div>
-</section>
+    <div class="bucket field">
+      <h2>Lessons from the Field</h2>
+      <p>Observations and lessons from real work experiences.</p>
+      <a href="buckets/field.html">Explore →</a>
+    </div>
 
-<section class="buckets">
-  <a class="bucket-card" href="buckets/work-in-practice.html">
-    <h3>Work in Practice</h3>
-    <p>PMO, delivery, systems, and real-world execution.</p>
-  </a>
+    <div class="bucket reflect">
+      <h2>Reflections & Notes</h2>
+      <p>Stories of learning, pausing, and growing over time.</p>
+      <a href="buckets/reflect.html">Explore →</a>
+    </div>
 
-  <a class="bucket-card" href="buckets/lessons-in-progress.html">
-    <h3>Lessons in Progress</h3>
-    <p>Career pivots, mistakes, and growth.</p>
-  </a>
+    <div class="bucket tools">
+      <h2>Things I Use</h2>
+      <p>Tools, habits, and practices that help me stay productive.</p>
+      <a href="buckets/tools.html">Explore →</a>
+    </div>
 
-  <a class="bucket-card" href="buckets/teaching-notes.html">
-    <h3>Teaching Notes</h3>
-    <p>Toastmasters, learning design, and facilitation.</p>
-  </a>
-
-  <a class="bucket-card" href="buckets/things-i-use.html">
-    <h3>Things I Use</h3>
-    <p>Templates, tools, and frameworks.</p>
-  </a>
-
-  <a class="bucket-card" href="buckets/life-leadership.html">
-    <h3>Life & Leadership</h3>
-    <p>Mindset, discipline, and long-term thinking.</p>
-  </a>
-</section>
-
-<div class="bucket pm">
-  <h2>The PM Diaries</h2>
-  <p>Stories from real projects, real pressure, and real learning.</p>
-  <a href="buckets/pm.html">Read stories →</a>
-</div>
-
-<div class="bucket field">
-  <h2>Lessons from the Field</h2>
-  <p>What project management actually teaches you — beyond frameworks.</p>
-  <a href="buckets/field.html">Explore lessons →</a>
-</div>
-
-<div class="bucket reflect">
-  <h2>Reflections & Notes</h2>
-  <p>Quiet thoughts, leadership lessons, and things no one writes about.</p>
-  <a href="buckets/reflections.html">Read reflections →</a>
-</div>
-
-
+    <div class="bucket leadership">
+      <h2>Life & Leadership</h2>
+      <p>Moments that shaped leadership lessons without formal titles.</p>
+      <a href="buckets/leadership.html">Explore →</a>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>© 2026 Kshama</p>
+  <p>© 2026 Notes by Kshama | <a href="about.html">About Me</a></p>
 </footer>
 
 </body>
