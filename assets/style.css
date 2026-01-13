@@ -21,7 +21,7 @@ nav a { margin-left:24px; font-weight:500; }
 main { max-width:900px; margin:auto; padding:40px 20px; }
 
 /* Buckets */
-.buckets { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:40px; }
+.buckets.vertical {display:flex; flex-direction:column; gap:28px; margin-top:40px;}
 .bucket { padding:24px; border-radius:12px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.06); transition:transform 0.2s ease, box-shadow 0.2s ease; }
 .bucket:hover { transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,0.08); }
 .bucket h2,h3 { font-family:'Playfair Display', serif; margin-bottom:12px; color:#1e40af; }
@@ -29,11 +29,27 @@ main { max-width:900px; margin:auto; padding:40px 20px; }
 .bucket a { font-weight:500; color:#2563eb; }
 
 /* Bucket Colors */
-.bucket.pm { background:#eef2ff; border-left:6px solid #4f46e5; }
+/* New Bucket Themes */
+.bucket.work {
+  background:#eef2ff;
+  border-left:6px solid #4f46e5;
+}
+
+.bucket.voice {
+  background:#ede9fe;
+  border-left:6px solid #7c3aed;
+}
+
+.bucket.life {
+  background:#fff7ed;
+  border-left:6px solid #ea580c;
+}
+
+/* .bucket.pm { background:#eef2ff; border-left:6px solid #4f46e5; }
 .bucket.field { background:#ecfeff; border-left:6px solid #0d9488; }
 .bucket.reflect { background:#fff1f2; border-left:6px solid #e11d48; }
 .bucket.tools { background:#fefce8; border-left:6px solid #ca8a04; }
-.bucket.leadership { background:#ede9fe; border-left:6px solid #7c3aed; }
+.bucket.leadership { background:#ede9fe; border-left:6px solid #7c3aed; }*/
 
 /* About Sections */
 .about-intro, .about-vision, .about-contact { max-width:750px; margin:auto; padding:30px 20px; background:#fff; margin-bottom:24px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.05); }
@@ -52,7 +68,7 @@ article p { margin-bottom:1.6em; font-size:16px; color:#1f2937; }
 /* Responsive */
 @media (max-width:768px){
   nav { flex-direction:column; gap:12px; }
-  .bucket { padding:16px; }
+  .bucket.vertical { gap:20px; }
   .hero h1 { font-size:32px; }
 }
 
