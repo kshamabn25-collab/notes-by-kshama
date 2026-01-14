@@ -166,6 +166,56 @@ footer {
   color:#6b7280;
 }
 
+/* Bucket card with image */
+.bucket-card {
+  display:flex;
+  gap:20px;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bucket-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,0.08);
+}
+
+.bucket-image {
+  width:200px;
+  object-fit:cover;
+}
+
+.bucket-content {
+  padding:20px;
+}
+
+.bucket-content h2 {
+  font-family:'Playfair Display', serif;
+  margin-bottom:10px;
+  color:#1e40af;
+}
+
+.bucket-content p {
+  font-size:14px;
+  color:#4b5563;
+  margin-bottom:14px;
+}
+
+/* Mobile-friendly */
+@media (max-width:768px){
+  .bucket-card {
+    flex-direction:column;
+  }
+
+  .bucket-image {
+    width:100%;
+    height:180px;
+  }
+}
+
+
 /* Responsive */
 @media (max-width:768px){
   nav {
