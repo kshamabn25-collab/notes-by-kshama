@@ -33,51 +33,133 @@
 
 <!-- Story Content -->
 <main>
-<article class="story">
+<article class="post">
+
+  <h1>The Project Didn’t Fail in the Meeting</h1>
+
+  <p>The meeting went well.</p>
 
   <p>
-    The steering committee room was quiet, bathed in the steady glow of a projector that displayed a sea of green status indicators. We were overseeing a massive 5G site deployment programme, managing a complex portfolio that required the constant synchronization of multiple workstreams. With over fifteen engineers working toward aggressive customer milestones, everything on the digital dashboard suggested we were moving at full speed toward a successful launch.
+    Everyone agreed. Ready nods, timelines looked aligned, and the next steps
+    were captured in neat bullet points. There was no tension in the room,
+    no red flags raised, no sense that anything was about to go wrong.
+  </p>
+
+  <p>The project didn’t fail there.</p>
+
+  <p>
+    It failed earlier — quietly — in a dependency no one wrote down.
+  </p>
+
+  <h2>Where it actually broke</h2>
+
+  <p>
+    In one of my projects, we were moving fast. Multiple teams, parallel tracks,
+    shared ownership. On paper, the plan looked solid.
   </p>
 
   <p>
-    However, a project of this scale, involving managed services and rigid technical standards, has a thousand moving parts that often escape the narrow view of a status slide. In that meeting, the go-live date looked solid and the atmosphere was one of confidence. But outside the walls of that conference room, a silent, unmapped dependency was quietly bringing the entire operation to a standstill.
+    But one task depended on another finishing first.<br>
+    Not formally. Not technically.<br>
+    Just in reality.
   </p>
 
-  <h3>The Hidden Blocker</h3>
   <p>
-    The plan appeared simple on the surface: deploy the physical 5G hardware, run the necessary site tests, and hand over the keys to the client. But our Work Breakdown Structure and the broader delivery roadmap contained a critical flaw buried deep within the integration cycle. While the hardware was being bolted into place and the towers were rising, the technical documentation—the very foundation required for safety, legal compliance, and operational integrity—was lagging far behind.
+    That dependency lived in someone’s head — not in the plan, not in the tracker,
+    not in the risk log. Because everyone “knew” it.
   </p>
 
-  
+  <p>
+    Except we didn’t align timelines around it.
+  </p>
 
   <p>
-    We realized, far later than we should have, that the testing teams were paralyzed. They could not legally or technically begin their work on-site until every piece of technical documentation was finalized and formally approved. This was not merely a paperwork delay or a clerical oversight; it was a total roadblock. It threatened our 99.9 percent uptime goals and put our regulatory compliance at immediate risk. The project hadn't hit a technical wall; it had hit a procedural one that no one had bothered to measure.
+    So when upstream work slipped slightly, downstream work didn’t adjust.
+    The task wasn’t flagged as blocked. It wasn’t raised as a risk.
+    It simply… didn’t happen on time.
+  </p>
+
+  <p>
+    By the time we noticed, it was already a problem.
+  </p>
+
+  <h2>Why we didn’t see it as a risk</h2>
+
+  <p>
+    The interesting part is this:<br>
+    nothing felt risky at the time.
+  </p>
+
+  <ul>
+    <li>The task existed</li>
+    <li>The owner was assigned</li>
+    <li>The date was filled in</li>
+  </ul>
+
+  <p>
+    What was missing was the <em>relationship</em> between tasks.
+  </p>
+
+  <p>
+    We tend to log risks when something feels uncertain or external.
+    This didn’t feel like either. It felt internal, controllable, obvious.
+  </p>
+
+  <p>
+    That’s why it never made it to the risk register.
+  </p>
+
+  <h2>The lesson I didn’t learn from a template</h2>
+
+  <p>
+    What this taught me wasn’t about better tools or stricter processes.
+  </p>
+
+  <p>
+    It was this:
   </p>
 
   <blockquote>
-    A project manager’s real job isn't watching the go button; it is watching the ready light that no one remembers to check.
+    Work fails less because of what we don’t plan<br>
+    and more because of what we assume doesn’t need saying.
   </blockquote>
 
-  <h3>Rescuing the Timeline</h3>
   <p>
-    To save the delivery, we had to move beyond the passive gathering of updates. We overhauled our entire approach to portfolio governance, focusing on bridging the massive communication gap between the engineers on the ground and the compliance teams in the office. 
+    Dependencies aren’t just technical.<br>
+    They are conversational.
   </p>
 
   <p>
-    We started by integrating the documentation gap into our managed RAID logs as a critical risk, eventually tracking over forty similar dependencies that had been previously overlooked. To gain real-time visibility, I moved away from manual check-ins and utilized Python and Shell scripting to automate our reporting processes. This shift reduced our reporting cycle time by 35 percent, allowing us to see document completion status as it happened rather than days after the fact.
+    If they aren’t spoken, written, and revisited,
+    they don’t really exist — no matter how “obvious” they seem.
+  </p>
+
+  <h2>What I do differently now</h2>
+
+  <p>
+    I don’t just ask what the tasks are.
+  </p>
+
+  <p>I ask:</p>
+
+  <ul>
+    <li>What cannot start until something else finishes?</li>
+    <li>What will silently slip if one date moves?</li>
+    <li>What does this task depend on that isn’t written anywhere?</li>
+  </ul>
+
+  <p>
+    And if the answer starts with “It’s obvious…” — that’s where I slow down.
+  </p>
+
+  <p>The project didn’t fail in the meeting.</p>
+
+  <p>
+    It failed in the space between two tasks that were never properly connected.
   </p>
 
   <p>
-    With this data, we could finally prioritize correctly. We realigned our strategic goals and shifted resources toward the documentation stream to unlock the testing phase. We also developed new executive dashboards that specifically highlighted these cross-domain dependencies, which improved leadership visibility by 40 percent.
-  </p>
-
-  <h3>The Result</h3>
-  <p>
-    By identifying this missed dependency through structured governance, we managed to optimize our overall delivery efficiency by 15 percent. We stopped the habit of reporting on what had already been done and began reporting on exactly what was blocking the next step in the chain. 
-  </p>
-
-  <p>
-    Ultimately, the project didn't fail in that initial meeting because we chose to change the nature of the conversation. We stopped asking if we were on time and started asking if we were truly ready.
+    That’s where most projects actually break.
   </p>
 
 </article>
