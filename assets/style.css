@@ -706,4 +706,190 @@ footer {
   }
 }
 
+/* ==========================================================
+   RESOURCES – Pack tiles (Home-page card feel)
+   ========================================================== */
+
+.pack-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.pack-tile {
+  display: block;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.06);
+  text-decoration: none;
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.pack-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.10);
+  border-color: rgba(29, 78, 216, 0.25);
+}
+
+.pack-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.pack-title {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  color: #1e40af;
+  letter-spacing: 0.2px;
+}
+
+.pack-chip {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(29, 78, 216, 0.10);
+  border: 1px solid rgba(29, 78, 216, 0.18);
+  color: #1e3a8a;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.pack-desc {
+  margin: 0;
+  color: #475569;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.pack-footer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.pack-kicker {
+  font-size: 14px;
+}
+
+.pack-arrow {
+  font-size: 18px;
+  transition: transform 220ms ease;
+}
+
+.pack-tile:hover .pack-arrow {
+  transform: translateX(3px);
+}
+
+/* ==========================================================
+   TABLES – upgraded (used across all artifact pages)
+   ========================================================== */
+
+.post table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 16px 0 26px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(2, 6, 23, 0.05);
+}
+
+.post th, .post td {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(2, 6, 23, 0.06);
+  vertical-align: top;
+  font-size: 14px;
+}
+
+.post th {
+  background: linear-gradient(180deg, rgba(2, 6, 23, 0.04), rgba(2, 6, 23, 0.02));
+  color: #0f172a;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+.post tr:nth-child(even) td {
+  background: rgba(2, 6, 23, 0.015);
+}
+
+.post tr:hover td {
+  background: rgba(29, 78, 216, 0.05);
+}
+
+.post tr:last-child td {
+  border-bottom: none;
+}
+
+/* Make wide tables scroll nicely on mobile */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 14px;
+}
+
+/* ==========================================================
+   RAG system (Risk Register)
+   ========================================================== */
+
+.rag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  border: 1px solid rgba(2, 6, 23, 0.10);
+  white-space: nowrap;
+}
+
+.rag-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.rag-red {
+  background: rgba(220, 38, 38, 0.10);
+  color: #991b1b;
+  border-color: rgba(220, 38, 38, 0.22);
+}
+
+.rag-red .rag-dot { background: #dc2626; }
+
+.rag-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
+.rag-amber .rag-dot { background: #f59e0b; }
+
+.rag-green {
+  background: rgba(34, 197, 94, 0.10);
+  color: #166534;
+  border-color: rgba(34, 197, 94, 0.22);
+}
+
+.rag-green .rag-dot { background: #22c55e; }
+
+.rag-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 6px;
+}
 

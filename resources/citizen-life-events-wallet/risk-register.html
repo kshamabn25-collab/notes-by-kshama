@@ -42,143 +42,179 @@
       The goal isn’t to predict perfectly — it’s to create visibility early enough to act.
     </p>
 
-    <h2>Sample risk register</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Risk</th>
-          <th>Category</th>
-          <th>Impact</th>
-          <th>Likelihood</th>
-          <th>Mitigation (prevention)</th>
-          <th>Contingency (if it happens)</th>
-          <th>Owner</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>R01</td>
-          <td>Security incident exposes citizen personal information</td>
-          <td>Security</td>
-          <td>5</td>
-          <td>2</td>
-          <td>Regular security testing, encryption, training, incident readiness</td>
-          <td>Lockdown, forensics, notifications, external support, regulatory reporting</td>
-          <td>Security Lead</td>
-          <td>Active</td>
-        </tr>
+<h2>Sample risk register</h2>
 
-        <tr>
-          <td>R02</td>
-          <td>Low adoption post-launch</td>
-          <td>Adoption</td>
-          <td>4</td>
-          <td>3</td>
-          <td>User research, beta programme, clear value messaging, partnerships</td>
-          <td>Rapid iteration, targeted campaigns, incentives, extra comms support</td>
-          <td>Change Lead</td>
-          <td>Active</td>
-        </tr>
+<p class="soft-note" style="margin-top:-6px;">
+  RAG logic used here: <strong>Score = Impact × Likelihood</strong>.
+  <strong>Red</strong> ≥ 16, <strong>Amber</strong> 9–15, <strong>Green</strong> ≤ 8.
+</p>
 
-        <tr>
-          <td>R03</td>
-          <td>Integration failures with legacy departmental systems</td>
-          <td>Technical</td>
-          <td>4</td>
-          <td>3</td>
-          <td>Early discovery, API-first design, sandbox testing, weekly technical sync</td>
-          <td>Phased integration, workaround APIs, manual fallback, escalation</td>
-          <td>Solutions Architect</td>
-          <td>Monitor</td>
-        </tr>
+<div class="rag-key">
+  <span class="rag-pill rag-red"><span class="rag-dot"></span>RED</span>
+  <span class="rag-pill rag-amber"><span class="rag-dot"></span>AMBER</span>
+  <span class="rag-pill rag-green"><span class="rag-dot"></span>GREEN</span>
+</div>
 
-        <tr>
-          <td>R04</td>
-          <td>GDPR compliance issues require redesign</td>
-          <td>Compliance</td>
-          <td>4</td>
-          <td>2</td>
-          <td>DPIA, privacy-by-design, retention policies, user controls</td>
-          <td>Prioritise compliance fixes, delay launch if needed, add legal resources</td>
-          <td>DPO / Privacy Lead</td>
-          <td>Active</td>
-        </tr>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Risk</th>
+        <th>Category</th>
+        <th>Impact</th>
+        <th>Likelihood</th>
+        <th>Score</th>
+        <th>RAG</th>
+        <th>Mitigation (prevention)</th>
+        <th>Contingency (if it happens)</th>
+        <th>Owner</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>R01</td>
+        <td>Security incident exposes citizen personal information</td>
+        <td>Security</td>
+        <td>5</td>
+        <td>2</td>
+        <td>10</td>
+        <td><span class="rag-pill rag-amber"><span class="rag-dot"></span>AMBER</span></td>
+        <td>Encryption, threat modelling, security testing, training, incident readiness</td>
+        <td>Lockdown, forensics, notifications, regulatory reporting, remediation sprint</td>
+        <td>Security Lead</td>
+        <td>Active</td>
+      </tr>
 
-        <tr>
-          <td>R05</td>
-          <td>Accessibility standards (WCAG 2.1 AA) not met</td>
-          <td>Compliance</td>
-          <td>3</td>
-          <td>2</td>
-          <td>Accessibility from design phase, automated testing, third-party audit</td>
-          <td>Dedicated remediation sprint, additional testing, delay release if required</td>
-          <td>UX Lead</td>
-          <td>Active</td>
-        </tr>
+      <tr>
+        <td>R02</td>
+        <td>Low adoption post-launch</td>
+        <td>Adoption</td>
+        <td>4</td>
+        <td>3</td>
+        <td>12</td>
+        <td><span class="rag-pill rag-amber"><span class="rag-dot"></span>AMBER</span></td>
+        <td>User research, guided onboarding, beta cohort, clear value messaging</td>
+        <td>Targeted campaigns, rapid iteration, extra support, channel partnerships</td>
+        <td>Change Lead</td>
+        <td>Active</td>
+      </tr>
 
-        <tr>
-          <td>R06</td>
-          <td>Performance degradation during high-load public launch</td>
-          <td>Technical</td>
-          <td>3</td>
-          <td>3</td>
-          <td>Load testing, auto-scaling, CDN, monitoring and alerting</td>
-          <td>Emergency scaling, phased rollout, launch-week support coverage</td>
-          <td>Infrastructure Lead</td>
-          <td>Active</td>
-        </tr>
+      <tr>
+        <td>R03</td>
+        <td>Integration failures with legacy departmental systems</td>
+        <td>Technical</td>
+        <td>4</td>
+        <td>3</td>
+        <td>12</td>
+        <td><span class="rag-pill rag-amber"><span class="rag-dot"></span>AMBER</span></td>
+        <td>Early discovery, sandbox testing, clear API contracts, weekly tech sync</td>
+        <td>Phased integration, temporary manual fallback, escalation path, re-plan</td>
+        <td>Solutions Architect</td>
+        <td>Monitor</td>
+      </tr>
 
-        <tr>
-          <td>R07</td>
-          <td>Budget overrun due to scope creep / unforeseen complexity</td>
-          <td>Financial</td>
-          <td>3</td>
-          <td>3</td>
-          <td>Change control, monthly reviews, contingency, must-have prioritisation</td>
-          <td>Descope lower priority items, request additional funding, defer to phase 2</td>
-          <td>Finance Manager</td>
-          <td>Active</td>
-        </tr>
+      <tr>
+        <td>R04</td>
+        <td>Privacy/compliance changes require redesign</td>
+        <td>Compliance</td>
+        <td>4</td>
+        <td>2</td>
+        <td>8</td>
+        <td><span class="rag-pill rag-green"><span class="rag-dot"></span>GREEN</span></td>
+        <td>DPIA, privacy-by-design, data minimisation, retention policy agreed early</td>
+        <td>Compliance-first remediation sprint; adjust launch scope if needed</td>
+        <td>Privacy Lead</td>
+        <td>Active</td>
+      </tr>
 
-        <tr>
-          <td>R08</td>
-          <td>Loss of key personnel during critical phases</td>
-          <td>Resource</td>
-          <td>3</td>
-          <td>2</td>
-          <td>Knowledge sharing, cross-training, succession planning</td>
-          <td>Rapid backfill, contractor support, redistribution, structured handover</td>
-          <td>Delivery Lead</td>
-          <td>Monitor</td>
-        </tr>
+      <tr>
+        <td>R05</td>
+        <td>Accessibility requirements not met (WCAG 2.1 AA)</td>
+        <td>Compliance</td>
+        <td>3</td>
+        <td>2</td>
+        <td>6</td>
+        <td><span class="rag-pill rag-green"><span class="rag-dot"></span>GREEN</span></td>
+        <td>Accessibility built into design; automated checks; external audit planned</td>
+        <td>Remediation sprint; delay release if mandatory fixes are not complete</td>
+        <td>UX Lead</td>
+        <td>Active</td>
+      </tr>
 
-        <tr>
-          <td>R09</td>
-          <td>Vendor delivery delays or quality issues</td>
-          <td>Vendor</td>
-          <td>3</td>
-          <td>2</td>
-          <td>Clear SLAs, milestone payments, quality gates, performance reviews</td>
-          <td>Escalate, contract penalties, alternate vendors, timeline re-plan</td>
-          <td>Procurement Lead</td>
-          <td>Monitor</td>
-        </tr>
+      <tr>
+        <td>R06</td>
+        <td>Performance degradation during high-load public launch</td>
+        <td>Technical</td>
+        <td>3</td>
+        <td>3</td>
+        <td>9</td>
+        <td><span class="rag-pill rag-amber"><span class="rag-dot"></span>AMBER</span></td>
+        <td>Load testing, autoscaling, monitoring, phased rollout approach</td>
+        <td>Emergency scale-up; throttle non-critical features; extended support window</td>
+        <td>Infrastructure Lead</td>
+        <td>Active</td>
+      </tr>
 
-        <tr>
-          <td>R10</td>
-          <td>Policy changes lead to reprioritisation or budget cuts</td>
-          <td>External</td>
-          <td>4</td>
-          <td>1</td>
-          <td>Strong business case, regular leadership briefings, demonstrate citizen value</td>
-          <td>Protect MVP scope, phase delivery, seek alternate funding paths</td>
-          <td>Programme Director</td>
-          <td>Monitor</td>
-        </tr>
-      </tbody>
-    </table>
+      <tr>
+        <td>R07</td>
+        <td>Budget overrun due to scope creep / underestimated complexity</td>
+        <td>Financial</td>
+        <td>3</td>
+        <td>3</td>
+        <td>9</td>
+        <td><span class="rag-pill rag-amber"><span class="rag-dot"></span>AMBER</span></td>
+        <td>Change control, strict MVP must-haves, monthly forecast vs actual</td>
+        <td>Descope lower priority items; move features to Phase 2; request funding</td>
+        <td>Delivery Lead</td>
+        <td>Active</td>
+      </tr>
+
+      <tr>
+        <td>R08</td>
+        <td>Key role attrition during critical phases</td>
+        <td>Resource</td>
+        <td>3</td>
+        <td>2</td>
+        <td>6</td>
+        <td><span class="rag-pill rag-green"><span class="rag-dot"></span>GREEN</span></td>
+        <td>Cross-training, documentation, pairing, succession plan for key roles</td>
+        <td>Rapid backfill; contractor support; re-sequence work to protect milestones</td>
+        <td>Delivery Lead</td>
+        <td>Monitor</td>
+      </tr>
+
+      <tr>
+        <td>R09</td>
+        <td>Vendor delivery delays or quality issues</td>
+        <td>Vendor</td>
+        <td>3</td>
+        <td>2</td>
+        <td>6</td>
+        <td><span class="rag-pill rag-green"><span class="rag-dot"></span>GREEN</span></td>
+        <td>Clear milestones, quality gates, frequent check-ins, acceptance criteria</td>
+        <td>Escalate; add support; swap vendor path; adjust plan and scope</td>
+        <td>Procurement Lead</td>
+        <td>Monitor</td>
+      </tr>
+
+      <tr>
+        <td>R10</td>
+        <td>Policy / priority changes affect scope or funding</td>
+        <td>External</td>
+        <td>4</td>
+        <td>1</td>
+        <td>4</td>
+        <td><span class="rag-pill rag-green"><span class="rag-dot"></span>GREEN</span></td>
+        <td>Strong benefits narrative; measurable outcomes; leadership comms rhythm</td>
+        <td>Protect MVP; phase rollout; rebaseline scope; secure alternate sponsorship</td>
+        <td>Programme Sponsor</td>
+        <td>Monitor</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
     <h2>Review cadence</h2>
     <ul>
