@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Risk Register | Citizen Life Events Wallet</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="logo">Notes by Kshama</a>
+  <div class="nav-links">
+    <a href="../../about.html">About</a>
+    <a href="../../resources.html">Resources</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Risk Register</h1>
+  <p class="subtitle">A compact, readable risk register with clear mitigations and owners.</p>
+</header>
+
+<main>
+  <article class="post post-work">
+
+    <div class="mini-nav">
+      <a href="index.html">Back to pack</a>
+      <a href="cost-and-resourcing.html">Next: Cost & resourcing →</a>
+    </div>
+
+    <div class="disclaimer-box">
+      <h2>Assumptions note</h2>
+      <p>
+        This register is shared as a sample portfolio artifact. The risk set, scoring, and roles are illustrative and meant to show structure.
+      </p>
+    </div>
+
+    <h1>Risk assessment approach</h1>
+    <p>
+      Risks are scored using a simple matrix: <strong>Impact (1–5)</strong> × <strong>Likelihood (1–5)</strong>.
+      The goal isn’t to predict perfectly — it’s to create visibility early enough to act.
+    </p>
+
+    <h2>Sample risk register</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Risk</th>
+          <th>Category</th>
+          <th>Impact</th>
+          <th>Likelihood</th>
+          <th>Mitigation (prevention)</th>
+          <th>Contingency (if it happens)</th>
+          <th>Owner</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R01</td>
+          <td>Security incident exposes citizen personal information</td>
+          <td>Security</td>
+          <td>5</td>
+          <td>2</td>
+          <td>Regular security testing, encryption, training, incident readiness</td>
+          <td>Lockdown, forensics, notifications, external support, regulatory reporting</td>
+          <td>Security Lead</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>R02</td>
+          <td>Low adoption post-launch</td>
+          <td>Adoption</td>
+          <td>4</td>
+          <td>3</td>
+          <td>User research, beta programme, clear value messaging, partnerships</td>
+          <td>Rapid iteration, targeted campaigns, incentives, extra comms support</td>
+          <td>Change Lead</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>R03</td>
+          <td>Integration failures with legacy departmental systems</td>
+          <td>Technical</td>
+          <td>4</td>
+          <td>3</td>
+          <td>Early discovery, API-first design, sandbox testing, weekly technical sync</td>
+          <td>Phased integration, workaround APIs, manual fallback, escalation</td>
+          <td>Solutions Architect</td>
+          <td>Monitor</td>
+        </tr>
+
+        <tr>
+          <td>R04</td>
+          <td>GDPR compliance issues require redesign</td>
+          <td>Compliance</td>
+          <td>4</td>
+          <td>2</td>
+          <td>DPIA, privacy-by-design, retention policies, user controls</td>
+          <td>Prioritise compliance fixes, delay launch if needed, add legal resources</td>
+          <td>DPO / Privacy Lead</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>R05</td>
+          <td>Accessibility standards (WCAG 2.1 AA) not met</td>
+          <td>Compliance</td>
+          <td>3</td>
+          <td>2</td>
+          <td>Accessibility from design phase, automated testing, third-party audit</td>
+          <td>Dedicated remediation sprint, additional testing, delay release if required</td>
+          <td>UX Lead</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>R06</td>
+          <td>Performance degradation during high-load public launch</td>
+          <td>Technical</td>
+          <td>3</td>
+          <td>3</td>
+          <td>Load testing, auto-scaling, CDN, monitoring and alerting</td>
+          <td>Emergency scaling, phased rollout, launch-week support coverage</td>
+          <td>Infrastructure Lead</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>R07</td>
+          <td>Budget overrun due to scope creep / unforeseen complexity</td>
+          <td>Financial</td>
+          <td>3</td>
+          <td>3</td>
+          <td>Change control, monthly reviews, contingency, must-have prioritisation</td>
+          <td>Descope lower priority items, request additional funding, defer to phase 2</td>
+          <td>Finance Manager</td>
+          <td>Active</td>
+        </tr>
+
+        <tr>
+          <td>R08</td>
+          <td>Loss of key personnel during critical phases</td>
+          <td>Resource</td>
+          <td>3</td>
+          <td>2</td>
+          <td>Knowledge sharing, cross-training, succession planning</td>
+          <td>Rapid backfill, contractor support, redistribution, structured handover</td>
+          <td>Delivery Lead</td>
+          <td>Monitor</td>
+        </tr>
+
+        <tr>
+          <td>R09</td>
+          <td>Vendor delivery delays or quality issues</td>
+          <td>Vendor</td>
+          <td>3</td>
+          <td>2</td>
+          <td>Clear SLAs, milestone payments, quality gates, performance reviews</td>
+          <td>Escalate, contract penalties, alternate vendors, timeline re-plan</td>
+          <td>Procurement Lead</td>
+          <td>Monitor</td>
+        </tr>
+
+        <tr>
+          <td>R10</td>
+          <td>Policy changes lead to reprioritisation or budget cuts</td>
+          <td>External</td>
+          <td>4</td>
+          <td>1</td>
+          <td>Strong business case, regular leadership briefings, demonstrate citizen value</td>
+          <td>Protect MVP scope, phase delivery, seek alternate funding paths</td>
+          <td>Programme Director</td>
+          <td>Monitor</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Review cadence</h2>
+    <ul>
+      <li>Weekly RAID review for delivery-level risks and dependencies.</li>
+      <li>Escalation to programme board for red risks or material delivery impact.</li>
+      <li>Every risk has an owner and a next action — not just a description.</li>
+    </ul>
+
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 Notes by Kshama</p>
+</footer>
+
+</body>
+</html>
+

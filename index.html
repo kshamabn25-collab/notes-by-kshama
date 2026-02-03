@@ -58,9 +58,113 @@
       </p>
       <a href="buckets/life.html">Explore Life, Slowly →</a>
     </div>
-
   </section>
+<section class="content-card">
+  <h2>Resources</h2>
+  <p class="soft-note" style="margin-top:-6px;">
+    Click to expand. Everything is readable as web pages (no downloads).
+  </p>
+
+  <div class="accordion" id="resourcesAccordion">
+
+    <!-- Item 1 -->
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button" aria-expanded="false">
+        <span class="accordion-title">Case Study Packs</span>
+        <span class="accordion-meta">1 pack • updated regularly</span>
+        <span class="accordion-icon" aria-hidden="true"></span>
+      </button>
+
+      <div class="accordion-panel" hidden>
+        <div class="accordion-panel-inner">
+          <p>
+            Structured project artifacts presented as clean pages — charter, risks, and cost/resourcing.
+          </p>
+
+          <a class="accordion-link" href="resources/citizen-life-events-wallet/index.html">
+            Citizen Life Events Wallet → Open pack
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 (optional placeholder – keep if you want) -->
+    <div class="accordion-item">
+      <button class="accordion-trigger" type="button" aria-expanded="false">
+        <span class="accordion-title">Templates</span>
+        <span class="accordion-meta">coming next</span>
+        <span class="accordion-icon" aria-hidden="true"></span>
+      </button>
+
+      <div class="accordion-panel" hidden>
+        <div class="accordion-panel-inner">
+          <p>
+            Templates I actually use: trackers, RAID logs, status updates, meeting minutes.
+          </p>
+          <p class="soft-note" style="margin-top:10px;">
+            I’ll add these once the case study packs settle into a consistent format.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 </main>
+
+<script>
+  (function () {
+    const items = document.querySelectorAll(".accordion-item");
+
+    function closeItem(item) {
+      const btn = item.querySelector(".accordion-trigger");
+      const panel = item.querySelector(".accordion-panel");
+      btn.setAttribute("aria-expanded", "false");
+      panel.style.height = "0px";
+      panel.addEventListener("transitionend", () => panel.hidden = true, { once: true });
+    }
+
+    function openItem(item) {
+      const btn = item.querySelector(".accordion-trigger");
+      const panel = item.querySelector(".accordion-panel");
+      panel.hidden = false;
+
+      // Set height for animation
+      const inner = panel.querySelector(".accordion-panel-inner");
+      panel.style.height = inner.scrollHeight + "px";
+      btn.setAttribute("aria-expanded", "true");
+    }
+
+    items.forEach((item) => {
+      const btn = item.querySelector(".accordion-trigger");
+      const panel = item.querySelector(".accordion-panel");
+
+      // Initialize
+      panel.style.height = "0px";
+
+      btn.addEventListener("click", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+
+        // Optional: close others (comment out if you want multiple open)
+        items.forEach((other) => {
+          if (other !== item) closeItem(other);
+        });
+
+        if (expanded) closeItem(item);
+        else openItem(item);
+      });
+
+      // Recalculate on resize (keeps animation clean on responsive layout)
+      window.addEventListener("resize", () => {
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        if (expanded) {
+          const inner = panel.querySelector(".accordion-panel-inner");
+          panel.style.height = inner.scrollHeight + "px";
+        }
+      });
+    });
+  })();
+</script>
 
 <!-- Footer -->
 <footer>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Charter | Citizen Life Events Wallet</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="logo">Notes by Kshama</a>
+  <div class="nav-links">
+    <a href="../../about.html">About</a>
+    <a href="../../resources.html">Resources</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Project Charter</h1>
+  <p class="subtitle">Citizen Life Events Wallet — purpose, scope, governance, and constraints.</p>
+</header>
+
+<main>
+  <article class="post post-work">
+
+    <div class="mini-nav">
+      <a href="index.html">Back to pack</a>
+      <a href="risk-register.html">Next: Risk register →</a>
+    </div>
+
+    <div class="disclaimer-box">
+      <h2>Assumptions note</h2>
+      <p>
+        This charter is presented as a portfolio artifact. Any detailed numbers (dates, budgets, team sizes, targets)
+        may be illustrative to demonstrate how a charter is structured.
+      </p>
+    </div>
+
+    <h1>1) Purpose</h1>
+    <p>
+      Deliver a citizen-friendly digital wallet experience that reduces repeated submissions of the same information,
+      improves request visibility (“where is my application?”), and supports secure sharing of government-issued documents
+      across selected life events.
+    </p>
+
+    <h2>2) Vision and objectives</h2>
+    <ul>
+      <li>Create a single, trusted place for citizens to manage key life events and related documentation.</li>
+      <li>Implement a “once-only” approach: provide information once, share securely with consent.</li>
+      <li>Enable status tracking and notifications across the citizen journey.</li>
+      <li>Launch an MVP and expand iteratively based on adoption and feedback.</li>
+    </ul>
+
+    <h2>3) Scope</h2>
+    <p><strong>In scope</strong></p>
+    <ul>
+      <li>Wallet app (mobile-first) integrated with identity authentication.</li>
+      <li>Life event workflows with status tracking and notifications.</li>
+      <li>Secure document storage/presentation and authenticity verification (e.g., QR verification).</li>
+      <li>Consent management for citizen-controlled data sharing.</li>
+      <li>Cross-department event notifications (where applicable).</li>
+    </ul>
+
+    <p><strong>Out of scope (initially)</strong></p>
+    <ul>
+      <li>Replacing existing departmental backend systems end-to-end.</li>
+      <li>International document verification beyond the initial scope.</li>
+      <li>Non-digital channel redesign beyond minimum support requirements.</li>
+    </ul>
+
+    <h2>4) Success measures</h2>
+    <ul>
+      <li>Reduced time-to-complete for selected journeys.</li>
+      <li>Higher self-service completion rate.</li>
+      <li>Lower rework caused by missing/inconsistent documents.</li>
+      <li>Improved transparency (status updates, fewer “where is my request?” contacts).</li>
+      <li>Compliance achieved for accessibility and privacy requirements.</li>
+    </ul>
+
+    <h2>5) Non-functional requirements</h2>
+    <ul>
+      <li><strong>Security:</strong> encryption, regular testing, defined incident response approach.</li>
+      <li><strong>Performance:</strong> supports high-load public launch scenarios.</li>
+      <li><strong>Accessibility:</strong> WCAG 2.1 AA for web/mobile interfaces.</li>
+      <li><strong>Availability:</strong> clear uptime targets excluding planned maintenance.</li>
+      <li><strong>Privacy:</strong> GDPR-aligned, data minimisation, privacy-by-design.</li>
+    </ul>
+
+    <h2>6) Governance and organisation</h2>
+    <ul>
+      <li><strong>Steering layer:</strong> strategic approvals, monthly cadence.</li>
+      <li><strong>Programme board:</strong> tactical oversight, bi-weekly cadence.</li>
+      <li><strong>Delivery teams:</strong> cross-functional teams delivering in increments (hybrid governance + agile execution).</li>
+    </ul>
+
+    <h2>7) Budget summary (illustrative structure)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Budget category</th>
+          <th>What it covers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Personnel / internal allocation</td>
+          <td>Core delivery leadership, product, engineering, QA, UX, BAU support allocation</td>
+        </tr>
+        <tr>
+          <td>Vendors / contractors</td>
+          <td>Specialist build support, testing, accessibility audits, security services</td>
+        </tr>
+        <tr>
+          <td>Cloud infrastructure</td>
+          <td>Environments, scaling, monitoring/observability, storage</td>
+        </tr>
+        <tr>
+          <td>Tools & licenses</td>
+          <td>Delivery tools, testing tools, analytics</td>
+        </tr>
+        <tr>
+          <td>Security & compliance</td>
+          <td>Pen tests, assurance, legal/compliance support</td>
+        </tr>
+        <tr>
+          <td>Change & adoption</td>
+          <td>Communications, guidance, onboarding support</td>
+        </tr>
+        <tr>
+          <td>Contingency</td>
+          <td>Unknowns, spikes, late-stage remediation buffer</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>8) Assumptions and constraints</h2>
+    <p><strong>Assumptions</strong></p>
+    <ul>
+      <li>Identity platform performance remains stable through delivery.</li>
+      <li>Departmental systems provide APIs to agreed timelines.</li>
+      <li>Core resources are available as planned.</li>
+    </ul>
+
+    <p><strong>Constraints</strong></p>
+    <ul>
+      <li>Public sector procurement and governance requirements.</li>
+      <li>Accessibility and privacy compliance are mandatory and may impact timelines.</li>
+      <li>Legacy systems may limit integration choices (API-first approach only).</li>
+    </ul>
+
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 Notes by Kshama</p>
+</footer>
+
+</body>
+</html>
+
