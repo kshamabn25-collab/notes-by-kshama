@@ -59,110 +59,38 @@
       </p>
       <a href="buckets/life.html">Explore Life, Slowly →</a>
     </div>
-
-    <!-- Resources (Dropdown / Accordion) -->
     <div class="bucket resources">
-      <h2>Resources</h2>
-      <p>
-        Readable project artifacts and notes — organised as expandable sections.
-      </p>
+  <h2>Resources</h2>
+  <p>
+    Readable project artifacts and notes — written as web pages.
+  </p>
 
-      <div class="accordion accordion-bucket" id="resourcesAccordion">
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" type="button" aria-expanded="false">
-            <span class="accordion-title">Case Study Packs</span>
-            <span class="accordion-meta">1 pack • updated regularly</span>
-            <span class="accordion-icon" aria-hidden="true"></span>
-          </button>
-
-          <div class="accordion-panel" hidden>
-            <div class="accordion-panel-inner">
-              <p class="soft-note" style="margin-top:0;">
-                Structured artifacts: charter, risk register, cost & resourcing — written as web pages.
-              </p>
-
-              <a class="accordion-link" href="resources/citizen-life-events-wallet/index.html">
-                Citizen Life Events Wallet →
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" type="button" aria-expanded="false">
-            <span class="accordion-title">Templates</span>
-            <span class="accordion-meta">coming next</span>
-            <span class="accordion-icon" aria-hidden="true"></span>
-          </button>
-
-          <div class="accordion-panel" hidden>
-            <div class="accordion-panel-inner">
-              <p class="soft-note" style="margin-top:0;">
-                RAID log, trackers, meeting minutes, and clean reporting templates — added in small, usable sets.
-              </p>
-            </div>
-          </div>
-        </div>
-
+  <div class="pack-grid">
+    <a class="pack-tile" href="resources/citizen-life-events-wallet/index.html">
+      <div class="pack-top">
+        <h3 class="pack-title">Case Study Packs</h3>
+        <span class="pack-chip">1 pack</span>
       </div>
 
-      <a class="inline-cta" href="resources.html">
-        Explore all resources →
-      </a>
-    </div>
+      <p class="pack-desc">
+        Structured delivery artifacts including a project charter, risk register
+        (with RAG), and a cost & resourcing view.
+      </p>
+
+      <div class="pack-footer">
+        <span class="pack-kicker">Open</span>
+        <span class="pack-arrow">→</span>
+      </div>
+    </a>
+  </div>
+
+    <a class="inline-cta" href="resources.html">
+      Explore all resources →
+    </a>
+  </div>
 
   </section>
 </main>
-
-<script>
-  (function () {
-    const items = document.querySelectorAll(".accordion-item");
-
-    function closeItem(item) {
-      const btn = item.querySelector(".accordion-trigger");
-      const panel = item.querySelector(".accordion-panel");
-      btn.setAttribute("aria-expanded", "false");
-      panel.style.height = "0px";
-      panel.addEventListener("transitionend", () => panel.hidden = true, { once: true });
-    }
-
-    function openItem(item) {
-      const btn = item.querySelector(".accordion-trigger");
-      const panel = item.querySelector(".accordion-panel");
-      panel.hidden = false;
-      const inner = panel.querySelector(".accordion-panel-inner");
-      panel.style.height = inner.scrollHeight + "px";
-      btn.setAttribute("aria-expanded", "true");
-    }
-
-    items.forEach((item) => {
-      const btn = item.querySelector(".accordion-trigger");
-      const panel = item.querySelector(".accordion-panel");
-      panel.style.height = "0px";
-
-      btn.addEventListener("click", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-
-        // close others (accordion behavior)
-        items.forEach((other) => {
-          if (other !== item) closeItem(other);
-        });
-
-        if (expanded) closeItem(item);
-        else openItem(item);
-      });
-
-      window.addEventListener("resize", () => {
-        const expanded = btn.getAttribute("aria-expanded") === "true";
-        if (expanded) {
-          const inner = panel.querySelector(".accordion-panel-inner");
-          panel.style.height = inner.scrollHeight + "px";
-        }
-      });
-    });
-  })();
-</script>
 
 <!-- Footer -->
 <footer>
