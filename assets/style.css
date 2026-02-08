@@ -1635,42 +1635,85 @@ body {
 }
 
 /* ==========================================================
-   ABOUT: Education & Certifications – CV-style alignment
+   ABOUT: Education & Certifications (premium CV feel)
    ========================================================== */
 
+.about-credentials {
+  margin-top: 22px;
+  padding: 18px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.06);
+}
+
+.about-credential-block+.about-credential-block {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(2, 6, 23, 0.08);
+}
+
+.about-credential-block h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(15, 23, 42, 0.70);
+}
+
+/* Each row */
 .credential-item {
   display: grid;
   grid-template-columns: 1fr auto;
-  /* title left, year right */
-  column-gap: 16px;
+  gap: 16px;
   align-items: baseline;
-  margin-bottom: 10px;
+  padding: 10px 0;
+  border-top: 1px dashed rgba(2, 6, 23, 0.10);
 }
 
+.credential-item:first-of-type {
+  border-top: none;
+  padding-top: 4px;
+}
+
+/* Left: title */
 .credential-title {
-  grid-column: 1;
-  font-weight: 700;
+  font-weight: 800;
   color: #0f172a;
   font-size: 15px;
+  line-height: 1.35;
 }
 
+/* Right: meta (institution + date) */
 .credential-meta {
-  grid-column: 2;
   font-size: 14px;
-  color: #475569;
+  color: rgba(51, 65, 85, 0.85);
   white-space: nowrap;
   text-align: right;
+  font-weight: 600;
 }
 
-/* On small screens, stack naturally */
-@media (max-width: 520px) {
+/* Make the dot separator look softer */
+.credential-meta {
+  letter-spacing: 0.01em;
+}
+
+/* Mobile: stack with softer alignment */
+@media (max-width: 640px) {
+  .about-credentials {
+    padding: 16px 14px;
+  }
+
   .credential-item {
     grid-template-columns: 1fr;
-    row-gap: 2px;
+    gap: 6px;
   }
 
   .credential-meta {
-    grid-column: 1;
+    white-space: normal;
     text-align: left;
+    font-weight: 600;
+    color: rgba(71, 85, 105, 0.95);
   }
 }
