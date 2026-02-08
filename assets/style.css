@@ -1633,3 +1633,44 @@ body {
 .about-contact-sep {
   color: #94a3b8;
 }
+
+/* ==========================================================
+   ABOUT: Education & Certifications – CV-style alignment
+   ========================================================== */
+
+.credential-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  /* title left, year right */
+  column-gap: 16px;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.credential-title {
+  grid-column: 1;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.credential-meta {
+  grid-column: 2;
+  font-size: 14px;
+  color: #475569;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* On small screens, stack naturally */
+@media (max-width: 520px) {
+  .credential-item {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+
+  .credential-meta {
+    grid-column: 1;
+    text-align: left;
+  }
+}
