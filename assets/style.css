@@ -1266,7 +1266,7 @@ body {
   display: grid;
   grid-template-columns: 340px 1fr;
   grid-template-rows: auto auto;
-  gap: 34px;
+  gap: 28px;
   align-items: start;
 
   padding: 34px;
@@ -1346,11 +1346,10 @@ body {
 }
 
 .about-lead {
-  font-size: 18px;
+  font-size: 17px;
   color: #334155;
-  line-height: 1.75;
-  margin-bottom: 14px;
-  max-width: 75ch;
+  line-height: 1.7;
+  margin-bottom: 10px;
 }
 
 .about-copy p {
@@ -1376,9 +1375,6 @@ body {
   color: #0f172a;
   font-weight: 800;
   font-size: 13px;
-  white-space: nowrap;
-  flex: 0 0 auto;
-  min-width: max-content;
 }
 
 .about-sections {
@@ -1458,7 +1454,7 @@ body {
    ========================================================== */
 
      .about-bubbles {
-       margin-top: 22px;
+       margin-top: 14px;
        display: grid;
        grid-template-columns: repeat(2, minmax(0, 1fr));
        gap: 18px;
