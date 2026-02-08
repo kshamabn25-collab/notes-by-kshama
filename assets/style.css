@@ -1354,17 +1354,18 @@ body {
 }
 
 .about-copy p {
-  margin: 0 0 14px;
+  margin: 0 0 10px;
+  /* tighter vertical flow */
   color: #334155;
-  line-height: 1.85;
+  line-height: 1.75;
+  /* slightly tighter */
   font-size: 16px;
 }
-
 .about-highlights {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 14px;
+  margin-top: 8px;
 }
 
 .about-pill {
@@ -1375,6 +1376,9 @@ body {
   color: #0f172a;
   font-weight: 800;
   font-size: 13px;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  min-width: max-content;
 }
 
 .about-sections {
@@ -1542,4 +1546,35 @@ body {
   grid-row: 2;
   justify-self: center;
   margin-top: 18px;
+}
+
+/* ==========================================================
+   ABOUT: contact row (email + LinkedIn)
+   ========================================================== */
+
+.about-contact {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  color: #475569;
+}
+
+.about-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.about-contact-item strong {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.about-contact-sep {
+  color: #94a3b8;
 }
