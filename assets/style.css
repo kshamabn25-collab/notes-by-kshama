@@ -784,87 +784,471 @@ footer {
 .disclaimer-box .soft-note { margin-top: 12px; }
 
 /* ==========================================================
-   Home: Section wrappers (used on index.html)
-   Keeps existing pack-grid / pack-tile style intact.
+   HOME: Premium section wrapper + accent rail (single source)
+   Fixes the side-rail issue by removing duplicate overrides.
    ========================================================== */
 
 .home-section {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 22px;
-  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  padding: 26px 24px 22px 40px;
+  /* space for the rail */
+  border-radius: 20px;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.92));
+  box-shadow:
+    0 22px 55px rgba(2, 6, 23, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.7) inset;
 }
 
 .home-section+.home-section {
   margin-top: 22px;
 }
 
+/* Soft glow blob (adds depth without looking busy) */
+.home-section::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -120px;
+  width: 260px;
+  height: 260px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0) 70%);
+  pointer-events: none;
+}
+
+/* Accent rail */
+.home-section::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  bottom: 18px;
+  width: 7px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(79, 70, 229, 1), rgba(37, 99, 235, 1));
+  box-shadow:
+    0 14px 34px rgba(37, 99, 235, 0.25),
+    0 0 0 1px rgba(37, 99, 235, 0.16);
+}
+
+/* Section-specific rail colors (NO red) */
+.home-section--resources::before {
+  background: linear-gradient(180deg, rgba(79, 70, 229, 1), rgba(37, 99, 235, 1));
+}
+
+.home-section--stories::before {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 1), rgba(37, 99, 235, 1));
+}
+
 .home-section-head h2 {
   font-family: 'Playfair Display', serif;
   color: var(--brand-dark);
+  letter-spacing: -0.02em;
   margin-bottom: 8px;
 }
 
 .home-section-head p {
   color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 12px;
+  font-size: 15px;
+  max-width: 68ch;
+  margin-bottom: 16px;
   line-height: 1.65;
 }
 
-/* Make pack grids feel like a proper homepage layout on desktop */
-@media (min-width: 860px) {
-  .pack-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-}
-
-/* Slightly tighter pack tiles inside home sections (optional refinement) */
+/* Pack tiles inside these sections feel slightly richer */
 .home-section .pack-tile {
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.07);
 }
 
-/* Keep inline CTA aligned with home section spacing */
-.home-section .inline-cta {
-  margin-top: 16px;
+.home-section .pack-tile:hover {
+  box-shadow: 0 18px 46px rgba(2, 6, 23, 0.10);
 }
 
 /* ==========================================================
-   Home section accent rail (left-side highlight)
-   Adds the same “side accent” feel as your top section.
+   ABOUT: Portfolio hero (matches your about.html classes)
+   Makes the profile image the centrepiece and adds colour.
    ========================================================== */
 
+.portfolio-hero {
+  margin: 40px 0 50px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg,
+      rgba(79, 70, 229, 0.12),
+      rgba(124, 58, 237, 0.10),
+      rgba(236, 72, 153, 0.08));
+  border-radius: 28px;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  box-shadow: 0 22px 55px rgba(2, 6, 23, 0.08);
+}
+
+.portfolio-card {
+  max-width: 900px;
+  margin: auto;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 24px;
+  box-shadow: 0 30px 70px rgba(2, 6, 23, 0.15);
+  border: 1px solid rgba(2, 6, 23, 0.08);
+}
+
+.portfolio-image-wrap {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+
+.portfolio-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
+  filter: blur(18px);
+  opacity: 0.78;
+  z-index: 0;
+}
+
+.portfolio-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 3px solid #ffffff;
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.25);
+}
+
+.portfolio-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portfolio-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.portfolio-role {
+  font-weight: 900;
+  color: #4f46e5;
+  margin-bottom: 14px;
+}
+
+.portfolio-summary {
+  font-size: 16px;
+  color: #334155;
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 760px) {
+  .portfolio-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .portfolio-image-wrap {
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================
+   HOME: Make it feel premium + colourful (CSS-only)
+   Paste at end of style.css
+   ========================================================== */
+
+/* 1) Give the whole page a subtle colour wash (removes “plain white” feel) */
+body {
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(79, 70, 229, 0.10), rgba(79, 70, 229, 0) 60%),
+    radial-gradient(900px 500px at 85% 30%, rgba(124, 58, 237, 0.08), rgba(124, 58, 237, 0) 60%),
+    radial-gradient(900px 500px at 60% 95%, rgba(37, 99, 235, 0.07), rgba(37, 99, 235, 0) 60%),
+    var(--bg);
+}
+
+/* 2) Home sections become a designed “module”, not just a white box */
 .home-section {
   position: relative;
   overflow: hidden;
-  /* keeps the accent rail clean */
-  padding-left: 28px;
-  /* creates space so rail doesn't crowd text */
+  padding: 28px 26px 24px 46px;
+  border-radius: 22px;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92));
+  box-shadow:
+    0 30px 80px rgba(2, 6, 23, 0.10),
+    0 1px 0 rgba(255, 255, 255, 0.7) inset;
 }
 
-/* The accent rail */
+/* Decorative “texture” so it doesn’t feel flat */
+.home-section::after {
+  content: "";
+  position: absolute;
+  right: -160px;
+  top: -160px;
+  width: 360px;
+  height: 360px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0) 70%);
+  pointer-events: none;
+}
+
+/* 3) Accent rail – thicker, more premium */
 .home-section::before {
   content: "";
   position: absolute;
-  left: 10px;
-  /* rail offset from the card edge */
+  left: 14px;
   top: 18px;
   bottom: 18px;
-  width: 6px;
+  width: 8px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #4f46e5 0%, #2563eb 100%);
+  background: linear-gradient(180deg, rgba(79, 70, 229, 1), rgba(37, 99, 235, 1));
   box-shadow:
-    0 10px 28px rgba(37, 99, 235, 0.22),
-    0 0 0 1px rgba(37, 99, 235, 0.18);
+    0 16px 40px rgba(37, 99, 235, 0.25),
+    0 0 0 1px rgba(37, 99, 235, 0.14);
 }
 
-/* Optional: slightly different accent for each section */
+/* Section-specific rail colours */
 .home-section--resources::before {
-  background: linear-gradient(180deg, #4f46e5 0%, #2563eb 100%);
+  background: linear-gradient(180deg, rgba(79, 70, 229, 1), rgba(37, 99, 235, 1));
 }
 
 .home-section--stories::before {
-  background: linear-gradient(180deg, #790303 0%, #960101 100%);
+  background: linear-gradient(180deg, rgba(124, 58, 237, 1), rgba(37, 99, 235, 1));
+}
+
+/* 4) Titles feel more “designed” */
+.home-section-head h2 {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
+  font-size: 30px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.home-section-head p {
+  font-size: 15.5px;
+  color: #475569;
+  max-width: 70ch;
+  margin-bottom: 18px;
+}
+
+/* 5) Pack tiles: add signature top-edge gradient + stronger hover */
+.pack-tile {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid rgba(2, 6, 23, 0.10);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(2, 6, 23, 0.08);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+/* Top accent edge */
+.pack-tile::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(79, 70, 229, 1), rgba(124, 58, 237, 1), rgba(37, 99, 235, 1));
+  opacity: 0.85;
+}
+
+/* Hover lift */
+.pack-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 60px rgba(2, 6, 23, 0.12);
+  border-color: rgba(37, 99, 235, 0.22);
+}
+
+/* 6) Chip: make it feel like a badge */
+.pack-chip {
+  background: rgba(79, 70, 229, 0.10);
+  border: 1px solid rgba(79, 70, 229, 0.22);
+  color: #1e3a8a;
+  box-shadow: 0 12px 26px rgba(79, 70, 229, 0.10);
+}
+
+/* 7) Footer row: make the arrow feel intentional */
+.pack-footer {
+  margin-top: 14px;
+}
+
+.pack-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(29, 78, 216, 0.10);
+  border: 1px solid rgba(29, 78, 216, 0.16);
+}
+
+/* 8) “Explore all resources” should look like a deliberate CTA */
+.inline-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-weight: 900;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(29, 78, 216, 0.08);
+  border: 1px solid rgba(29, 78, 216, 0.14);
+}
+
+/* Desktop density */
+@media (min-width: 860px) {
+  .pack-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+}
+
+/* ==========================================================
+   Section title icon (Home)
+   ========================================================== */
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.10);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+}
+
+.section-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Slightly different tint for Stories */
+.home-section--stories .section-icon {
+  background: rgba(124, 58, 237, 0.10);
+  border-color: rgba(124, 58, 237, 0.20);
+  box-shadow: 0 14px 34px rgba(124, 58, 237, 0.12);
+  color: #7c3aed;
+}
+
+/* ==========================================================
+   Section title underline (signature accent)
+   ========================================================== */
+
+.section-title {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+/* Gradient underline */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 52px;
+  /* aligns after icon */
+  bottom: 0;
+  width: 88px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+      rgba(79, 70, 229, 1),
+      rgba(124, 58, 237, 1),
+      rgba(37, 99, 235, 1));
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+}
+
+/* Stories gets a slightly warmer variation */
+.home-section--stories .section-title::after {
+  background: linear-gradient(90deg,
+      rgba(124, 58, 237, 1),
+      rgba(236, 72, 153, 1),
+      rgba(37, 99, 235, 1));
+}
+
+/* ==========================================================
+   Section title: animated underline + watermark number
+   ========================================================== */
+
+.section-title {
+  position: relative;
+  padding-bottom: 14px;
+  isolation: isolate;
+  /* keeps watermark behind text */
+}
+
+/* Animated underline */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 52px;
+  /* aligns after icon */
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+      rgba(79, 70, 229, 1),
+      rgba(124, 58, 237, 1),
+      rgba(37, 99, 235, 1));
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+  animation: underlineGrow 0.6s ease-out forwards;
+  animation-delay: 0.15s;
+}
+
+/* Stories variation */
+.home-section--stories .section-title::after {
+  background: linear-gradient(90deg,
+      rgba(124, 58, 237, 1),
+      rgba(236, 72, 153, 1),
+      rgba(37, 99, 235, 1));
+}
+
+/* Watermark number */
+.section-title::before {
+  content: attr(data-section);
+  position: absolute;
+  left: -10px;
+  top: -18px;
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  font-weight: 700;
+  color: rgba(2, 6, 23, 0.06);
+  z-index: -1;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+}
+
+/* Animation */
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 88px;
+  }
 }
