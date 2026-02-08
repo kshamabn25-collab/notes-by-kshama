@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cutover Readiness Checklist – Core Banking Migration | Notes by Kshama</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="logo">Notes by Kshama</a>
+  <div class="nav-links">
+    <a href="../../about.html">About</a>
+    <a href="../../resources.html">Resources</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>Cutover Readiness</h1>
+  <p class="subtitle">
+    Go/No-Go gates for finance — objective evidence over optimism.
+  </p>
+</header>
+
+<main>
+  <article class="post post-work">
+
+    <h1>Cutover Readiness Checklist (Go/No-Go)</h1>
+    <p>
+      In financial services, the cutover is a controlled risk event. This checklist defines objective gates,
+      required evidence, and the accountable owner for each readiness area.
+    </p>
+
+    <table class="pm-table">
+      <thead>
+        <tr>
+          <th>Gate</th>
+          <th>Readiness criteria</th>
+          <th>Evidence required</th>
+          <th>Owner</th>
+          <th>Go/No-Go rule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>G1 — Data integrity</strong></td>
+          <td>Reconciliation within tolerance across all account types and ledgers</td>
+          <td>Signed reconciliation report + independent QA validation</td>
+          <td>Data Migration Lead</td>
+          <td>No-Go if tolerance breached or exceptions untriaged</td>
+        </tr>
+
+        <tr>
+          <td><strong>G2 — Channel stability</strong></td>
+          <td>Login, account view, and critical journeys stable under peak load</td>
+          <td>Performance test results + monitoring dashboards + error budget thresholds</td>
+          <td>Channels Lead</td>
+          <td>No-Go if critical journey fails or sustained error rate above threshold</td>
+        </tr>
+
+        <tr>
+          <td><strong>G3 — Payments continuity</strong></td>
+          <td>Payments scenarios validated end-to-end (incl. retries and exceptions)</td>
+          <td>Test evidence; reconciliation; contingency plan for failed processing</td>
+          <td>Payments Lead</td>
+          <td>No-Go if any critical payment scenario remains unproven</td>
+        </tr>
+
+        <tr>
+          <td><strong>G4 — Monitoring & incident response</strong></td>
+          <td>War-room staffed, runbooks validated, escalation paths clear</td>
+          <td>Incident drill outcome report + on-call rota + severity triage matrix</td>
+          <td>Ops Lead</td>
+          <td>No-Go if staffing gaps or runbooks unvalidated</td>
+        </tr>
+
+        <tr>
+          <td><strong>G5 — Rollback safety</strong></td>
+          <td>Rollback plan tested, timeboxed, and decision authority explicit</td>
+          <td>Rollback rehearsal report + decision log + “point of no return” definition</td>
+          <td>Programme Director</td>
+          <td>No-Go if rollback untested or authority unclear</td>
+        </tr>
+
+        <tr>
+          <td><strong>G6 — Customer communications</strong></td>
+          <td>Customer messaging, scripts, and fallback channels ready</td>
+          <td>Comms pack + branch scripts + contact centre FAQ + update cadence plan</td>
+          <td>Comms Lead</td>
+          <td>No-Go if customer comms is incomplete or unapproved</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      “Ready” is not a milestone.
+      It’s a body of evidence.
+    </blockquote>
+
+    <p class="soft-note">
+      ← Back to <a href="index.html">Pack overview</a>
+    </p>
+
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 Notes by Kshama</p>
+</footer>
+
+</body>
+</html>
+

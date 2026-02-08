@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RAID Log – Core Banking Migration | Notes by Kshama</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <a href="../../index.html" class="logo">Notes by Kshama</a>
+  <div class="nav-links">
+    <a href="../../about.html">About</a>
+    <a href="../../resources.html">Resources</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <h1>RAID Log</h1>
+  <p class="subtitle">
+    Risks • Assumptions • Issues • Dependencies — with RAG and escalation triggers.
+  </p>
+</header>
+
+<main>
+  <article class="post post-work">
+
+    <h1>RAID Log (RAG)</h1>
+    <p>
+      This RAID log is structured to highlight what matters most in finance: customer impact, data integrity,
+      channel stability, operational capacity, and evidence-based Go/No-Go criteria.
+    </p>
+
+    <div class="soft-note">
+      <strong>RAG legend:</strong> 🔴 High attention / escalate • 🟡 Manage closely • 🟢 Monitor
+    </div>
+
+    <table class="pm-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>RAG</th>
+          <th>Owner</th>
+          <th>Mitigation / Plan</th>
+          <th>Trigger / Escalation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R-01</td>
+          <td>Risk</td>
+          <td>Migration inaccuracies leading to incorrect balances / missing transactions</td>
+          <td>🔴</td>
+          <td>Data Migration Lead</td>
+          <td>Full-volume rehearsals; reconciliation controls; independent verification; exception handling playbook</td>
+          <td>Reconciliation variance above tolerance in any dress rehearsal</td>
+        </tr>
+
+        <tr>
+          <td>R-02</td>
+          <td>Risk</td>
+          <td>Customers unable to log in / view accounts due to performance or auth failures</td>
+          <td>🔴</td>
+          <td>Channels Lead</td>
+          <td>Peak load testing; error budget thresholds; monitoring; fallback support channels</td>
+          <td>Peak test failure OR sustained error rate above threshold</td>
+        </tr>
+
+        <tr>
+          <td>R-03</td>
+          <td>Risk</td>
+          <td>Payments (direct debits/standing orders/transfers) fail or process inconsistently</td>
+          <td>🔴</td>
+          <td>Payments Lead</td>
+          <td>E2E payment testing; reconciliation; staged validation; contingency processing plan</td>
+          <td>Any failed payment scenario in critical paths not resolved before Go/No-Go</td>
+        </tr>
+
+        <tr>
+          <td>D-01</td>
+          <td>Dependency</td>
+          <td>Vendor incident response readiness (on-call, runbooks, triage tooling)</td>
+          <td>🟡</td>
+          <td>Vendor Manager</td>
+          <td>Contracted rota; joint drills; runbooks signed off; clear ownership boundaries</td>
+          <td>Unverified runbooks or gaps in coverage during cutover window</td>
+        </tr>
+
+        <tr>
+          <td>A-01</td>
+          <td>Assumption</td>
+          <td>Frontline capacity can absorb customer queries without material service degradation</td>
+          <td>🟡</td>
+          <td>Change Manager</td>
+          <td>Surge staffing plan; scripts; escalation route; “what to tell customers” decision tree</td>
+          <td>Readiness simulation shows overload; training completion below target</td>
+        </tr>
+
+        <tr>
+          <td>I-01</td>
+          <td>Issue</td>
+          <td>Incident volume exceeds war-room triage capacity post-cutover</td>
+          <td>🟡</td>
+          <td>Ops Lead</td>
+          <td>Triage matrix; severity-based routing; expanded staffing; incident comms cadence</td>
+          <td>Backlog grows for 2+ cycles; customer wait times exceed agreed threshold</td>
+        </tr>
+
+        <tr>
+          <td>R-04</td>
+          <td>Risk</td>
+          <td>Over-optimistic status reporting hides readiness gaps</td>
+          <td>🔴</td>
+          <td>Programme Director</td>
+          <td>Outcome metrics required; independent assurance sign-off; explicit “unknowns” section in status reports</td>
+          <td>Key outcomes not evidenced by test results or independent validation</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <blockquote>
+      The risk isn’t only what can go wrong.
+      It’s what the programme becomes unwilling to hear.
+    </blockquote>
+
+    <p class="soft-note">
+      ← Back to <a href="index.html">Pack overview</a>
+    </p>
+
+  </article>
+</main>
+
+<footer>
+  <p>© 2026 Notes by Kshama</p>
+</footer>
+
+</body>
+</html>
+
