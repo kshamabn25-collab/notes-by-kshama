@@ -1252,3 +1252,265 @@ body {
     width: 88px;
   }
 }
+
+/* ==========================================================
+   ABOUT page: big left photo + strong right narrative
+   (inspired by your reference layout)
+   ========================================================== */
+
+.about-hero {
+  margin: 44px 0 10px;
+}
+
+.about-hero-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 34px;
+  align-items: center;
+
+  padding: 34px;
+  border-radius: 26px;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92));
+  box-shadow: 0 30px 80px rgba(2, 6, 23, 0.10);
+  overflow: hidden;
+}
+
+.about-hero-card::after {
+  content: "";
+  position: absolute;
+  right: -180px;
+  top: -180px;
+  width: 420px;
+  height: 420px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, rgba(124, 58, 237, 0.16), rgba(124, 58, 237, 0) 70%);
+  pointer-events: none;
+}
+
+.about-hero-left {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 320px;
+}
+
+.about-photo-ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 1), rgba(124, 58, 237, 1), rgba(37, 99, 235, 1));
+  filter: blur(18px);
+  opacity: 0.38;
+}
+
+.about-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center;
+
+  border: 6px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 28px 70px rgba(2, 6, 23, 0.20);
+  background: #fff;
+}
+
+.about-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 8px;
+  color: #0f172a;
+}
+
+.about-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.10);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+  color: #1e3a8a;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.about-lead {
+  font-size: 18px;
+  color: #334155;
+  line-height: 1.75;
+  margin-bottom: 14px;
+  max-width: 75ch;
+}
+
+.about-copy p {
+  margin: 0 0 14px;
+  color: #334155;
+  line-height: 1.85;
+  font-size: 16px;
+}
+
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.about-pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 6, 23, 0.10);
+  background: rgba(2, 6, 23, 0.03);
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.about-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.about-section {
+  padding: 18px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(2, 6, 23, 0.08);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.06);
+}
+
+.about-section h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.about-section p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.75;
+}
+
+@media (min-width: 860px) {
+  .about-sections {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .about-hero-card {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .about-hero-left {
+    min-height: auto;
+    margin-bottom: 10px;
+  }
+
+  .about-photo-ring {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-photo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .about-name {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-hero-card {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .about-photo {
+    width: 210px;
+    height: 210px;
+  }
+}
+
+/* ==========================================================
+   ABOUT: category bubbles (non-links) like the reference
+   ========================================================== */
+
+.about-bubbles {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.about-bubble {
+  width: 118px;
+  height: 118px;
+  border-radius: 999px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+
+  border: 1px solid rgba(2, 6, 23, 0.10);
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.10);
+  transform: translateZ(0);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.about-bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(2, 6, 23, 0.14);
+}
+
+.bubble-title {
+  font-weight: 900;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+.bubble-sub {
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(15, 23, 42, 0.60);
+}
+
+/* Bubble colours */
+.bubble-resume {
+  background: rgba(132, 204, 22, 0.18);
+  /* lime */
+}
+
+.bubble-research {
+  background: rgba(245, 158, 11, 0.18);
+  /* amber */
+}
+
+.bubble-outreach {
+  background: rgba(34, 211, 238, 0.18);
+  /* cyan */
+}
+
+.bubble-personal {
+  background: rgba(148, 163, 184, 0.22);
+  /* slate */
+}
+
+/* Mobile: center the bubble row */
+@media (max-width: 860px) {
+  .about-bubbles {
+    justify-content: center;
+  }
+}
