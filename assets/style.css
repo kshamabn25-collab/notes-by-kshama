@@ -1795,3 +1795,164 @@ body {
   font-weight: 900;
   color: rgba(15, 23, 42, 0.75);
 }
+
+/* ==========================================================
+   HOME polish: hero + reveal animations + premium tile hover
+   Add at END of style.css
+   ========================================================== */
+
+.hero-animated {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(900px 320px at 20% 20%, rgba(79, 70, 229, 0.18), transparent 55%),
+    radial-gradient(760px 260px at 80% 30%, rgba(20, 184, 166, 0.16), transparent 55%),
+    linear-gradient(180deg, #eef2ff, #f8fafc);
+  border-bottom: 4px solid rgba(79, 70, 229, 0.55);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.hero-cta {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(2, 6, 23, 0.10);
+  box-shadow: 0 12px 26px rgba(2, 6, 23, 0.08);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.95), rgba(29, 78, 216, 0.95));
+  color: #ffffff;
+  border-color: rgba(79, 70, 229, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.75);
+  color: #0f172a;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(2, 6, 23, 0.10);
+}
+
+/* Decorative blobs */
+.hero-blob {
+  position: absolute;
+  z-index: 1;
+  border-radius: 999px;
+  filter: blur(14px);
+  opacity: 0.85;
+  animation: floaty 7.5s ease-in-out infinite;
+}
+
+.hero-blob-1 {
+  width: 360px;
+  height: 240px;
+  left: -120px;
+  top: 40px;
+  background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, 0.55), rgba(79, 70, 229, 0.10));
+}
+
+.hero-blob-2 {
+  width: 320px;
+  height: 220px;
+  right: -110px;
+  top: 90px;
+  background: radial-gradient(circle at 30% 30%, rgba(20, 184, 166, 0.45), rgba(20, 184, 166, 0.08));
+  animation-delay: 1.2s;
+}
+
+@keyframes floaty {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(0, -10px, 0) scale(1.02);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Premium tile hover shine (works on existing pack-tile) */
+.pack-tile {
+  position: relative;
+  overflow: hidden;
+}
+
+.pack-tile::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.55) 18%,
+      transparent 36%);
+  transform: translateX(-120%);
+  transition: transform .55s ease;
+  pointer-events: none;
+}
+
+.pack-tile:hover::before {
+  transform: translateX(120%);
+}
+
+/* Slightly stronger hover lift */
+.pack-tile:hover {
+  transform: translateY(-6px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob {
+    animation: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .pack-tile::before {
+    display: none !important;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    transition: none !important;
+  }
+}

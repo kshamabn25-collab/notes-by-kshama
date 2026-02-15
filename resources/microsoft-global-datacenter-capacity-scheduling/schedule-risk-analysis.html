@@ -28,32 +28,86 @@
     <main>
         <article class="post post-work">
             <h1>Schedule Risk & Sensitivity Analysis</h1>
-
-            <h2>Primary risk drivers</h2>
-            <ul>
-                <li>Utility approval and energisation lead times</li>
-                <li>Long-lead procurement variability (global supply constraints)</li>
-                <li>Commissioning labour capacity and sequencing across sites</li>
-                <li>Interdependent handover windows (Ops readiness + compliance)</li>
-            </ul>
-
-            <h2>Sensitivity scenarios (modeled)</h2>
-            <ul>
-                <li><strong>S1:</strong> +15 working days delay in power approval</li>
-                <li><strong>S2:</strong> +30 working days delay in long-lead equipment delivery</li>
-                <li><strong>S3:</strong> constrained commissioning teams (reduced throughput)</li>
-            </ul>
-
-            <h2>What triggers escalation</h2>
-            <ul>
-                <li>Forecast slip of committed milestone beyond tolerance</li>
-                <li>Critical milestone float drops below 5 working days</li>
-                <li>Repeated churn in forecast dates without root-cause closure</li>
-            </ul>
-
-            <p class="soft-note">
-                ← Back to <a href="index.html">Pack index</a>
+            
+            <h2>Overview</h2>
+            <p>
+                Schedule risk management focuses on identifying threats to committed delivery milestones,
+                quantifying their impact through sensitivity analysis, and defining mitigation pathways
+                before critical path breach occurs.
             </p>
+            
+            <h2>Primary Risk Drivers</h2>
+            <ul>
+                <li>Utility approval volatility</li>
+                <li>Long-lead equipment supply variability</li>
+                <li>Commissioning workforce overlap</li>
+                <li>Cross-site integration window conflicts</li>
+            </ul>
+            
+            <h2>Risk Register (Schedule Focus)</h2>
+            
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Risk Description</th>
+                            <th>Impact</th>
+                            <th>Likelihood</th>
+                            <th>RAG</th>
+                            <th>Mitigation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SR-01</td>
+                            <td>Utility approval delay beyond forecast</td>
+                            <td>Direct critical path impact; commissioning start shifts</td>
+                            <td>Medium</td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Early escalation + parallel documentation submission</td>
+                        </tr>
+                        <tr>
+                            <td>SR-02</td>
+                            <td>Long-lead equipment shipment delay</td>
+                            <td>Install/test resequencing required across two sites</td>
+                            <td>High</td>
+                            <td><span class="rag-pill rag-red">Red</span></td>
+                            <td>Alternate supplier evaluation + buffer creation</td>
+                        </tr>
+                        <tr>
+                            <td>SR-03</td>
+                            <td>Commissioning resource contention</td>
+                            <td>Float erosion across near-critical activities</td>
+                            <td>Medium</td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Regional resource rebalancing + surge support</td>
+                        </tr>
+                        <tr>
+                            <td>SR-04</td>
+                            <td>Integration window misalignment</td>
+                            <td>Downstream operational readiness shift</td>
+                            <td>Low</td>
+                            <td><span class="rag-pill rag-green">Green</span></td>
+                            <td>Confirm integration slot early + publish dependency map</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h2>Sensitivity Scenarios</h2>
+            <ul>
+                <li><strong>Scenario A:</strong> +15 working day power delay → Committed milestone risk increases to 40%</li>
+                <li><strong>Scenario B:</strong> +30 working day procurement delay → Recovery plan required</li>
+                <li><strong>Scenario C:</strong> Workforce capacity reduced by 20% → Near-critical band expansion</li>
+            </ul>
+            
+            <h2>Escalation Triggers</h2>
+            <ul>
+                <li>Committed date risk exceeds 5% tolerance</li>
+                <li>Critical milestone float &lt; 5 working days</li>
+                <li>Repeated forecast volatility across 2+ review cycles</li>
+            </ul>
         </article>
     </main>
 
