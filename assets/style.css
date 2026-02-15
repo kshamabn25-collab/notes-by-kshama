@@ -1717,3 +1717,81 @@ body {
     color: rgba(71, 85, 105, 0.95);
   }
 }
+
+/* ==========================================================
+   RESOURCES: Tags row (used in case pack index pages)
+   ========================================================== */
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 18px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(2, 6, 23, 0.10);
+  background: rgba(2, 6, 23, 0.03);
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 12.5px;
+  letter-spacing: 0.2px;
+}
+
+/* Tag variants (use whichever you want in HTML) */
+.tag-work {
+  background: rgba(29, 78, 216, 0.10);
+  border-color: rgba(29, 78, 216, 0.18);
+  color: #1e3a8a;
+}
+
+.tag-pm {
+  background: rgba(20, 184, 166, 0.12);
+  border-color: rgba(20, 184, 166, 0.22);
+  color: #0f766e;
+}
+
+.tag-digital {
+  background: rgba(124, 58, 237, 0.10);
+  border-color: rgba(124, 58, 237, 0.18);
+  color: #5b21b6;
+}
+
+.tag-hybrid {
+  background: rgba(245, 158, 11, 0.14);
+  border-color: rgba(245, 158, 11, 0.26);
+  color: #92400e;
+}
+
+/* ==========================================================
+   RESOURCES: Document meta row (optional, but very PM-pack)
+   Use: <div class="doc-meta"><span class="doc-pill">...</span>...</div>
+   ========================================================== */
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 18px;
+}
+
+.doc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(2, 6, 23, 0.10);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.06);
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.doc-pill strong {
+  font-weight: 900;
+  color: rgba(15, 23, 42, 0.75);
+}
