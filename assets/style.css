@@ -1083,3 +1083,471 @@ footer {
     radial-gradient(900px 260px at 20% 10%, rgba(251, 113, 133, 0.12), transparent 60%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
 }
+
+/* ==========================================================
+   ABOUT PAGE (Restored & Dark Optimised)
+   Matches structure in about.html
+   ========================================================== */
+
+.about-hero {
+  margin-top: 40px;
+}
+
+/* Main card */
+.about-hero-card {
+  background:
+    radial-gradient(900px 280px at 15% 10%, rgba(124, 58, 237, 0.18), transparent 60%),
+    radial-gradient(900px 280px at 85% 20%, rgba(34, 211, 238, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* Top section layout */
+.about-top {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 36px;
+}
+
+/* Photo */
+.about-hero-left {
+  position: relative;
+}
+
+.about-photo-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7C3AED, #22D3EE);
+  filter: blur(12px);
+  opacity: 0.6;
+  z-index: 0;
+}
+
+.about-photo {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Bubbles */
+.about-bubbles {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 14px;
+  margin-left: auto;
+}
+
+.about-bubble {
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  min-width: 150px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.about-bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.bubble-title {
+  font-weight: 800;
+  font-size: 14px;
+  color: #E7ECF6;
+}
+
+.bubble-sub {
+  font-size: 12px;
+  color: rgba(231, 236, 246, 0.65);
+  margin-top: 4px;
+}
+
+/* Text section */
+.about-hero-right {
+  margin-top: 10px;
+}
+
+.about-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: #E7ECF6;
+}
+
+.about-role {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(231, 236, 246, 0.65);
+  margin-bottom: 16px;
+}
+
+/* Contact row */
+.about-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 18px;
+  color: rgba(231, 236, 246, 0.70);
+}
+
+.about-contact-link {
+  color: #22D3EE;
+  font-weight: 600;
+}
+
+.about-contact-link:hover {
+  color: #A78BFA;
+}
+
+.about-contact-sep {
+  opacity: 0.5;
+}
+
+/* Lead paragraph */
+.about-lead {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(231, 236, 246, 0.90);
+  margin-bottom: 20px;
+}
+
+/* Body copy */
+.about-copy p {
+  margin-bottom: 16px;
+  color: rgba(231, 236, 246, 0.88);
+  line-height: 1.8;
+}
+
+/* Highlight pills */
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.about-pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.16);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  font-size: 12px;
+  font-weight: 700;
+  color: #E7ECF6;
+}
+
+/* Credentials */
+.about-credentials {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.about-credential-block h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #E7ECF6;
+}
+
+.credential-item {
+  margin-bottom: 14px;
+}
+
+.credential-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #E7ECF6;
+}
+
+.credential-meta {
+  font-size: 12px;
+  color: rgba(231, 236, 246, 0.60);
+}
+
+/* Secondary structured section */
+.about-sections {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-section {
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.about-section h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #E7ECF6;
+}
+
+.about-section p {
+  font-size: 14px;
+  color: rgba(231, 236, 246, 0.75);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-bubbles {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 20px 0 0;
+  }
+
+  .about-credentials {
+    grid-template-columns: 1fr;
+  }
+
+  .about-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   ABOUT: Animated gradient outline for bubbles
+   ========================================================== */
+
+@keyframes bubbleGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about-bubble {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* gradient outline layer */
+.about-bubble::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(120deg,
+      rgba(34, 211, 238, 0.85),
+      rgba(167, 139, 250, 0.85),
+      rgba(251, 113, 133, 0.65),
+      rgba(34, 211, 238, 0.85));
+  background-size: 300% 300%;
+  animation: bubbleGlow 6s ease-in-out infinite;
+  z-index: -1;
+  opacity: 0.65;
+
+  /* make it an outline only */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* subtle inner highlight */
+.about-bubble::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(500px 160px at 20% 10%, rgba(255, 255, 255, 0.08), transparent 55%);
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.about-bubble:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+.about-bubble:hover::before {
+  opacity: 0.9;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .about-bubble::before {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================
+   ABOUT: Executive credentials styling
+   ========================================================== */
+
+.about-credentials {
+  margin-top: 38px;
+  gap: 22px;
+  /* tighter, more structured */
+}
+
+.about-credential-block {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  padding: 18px 18px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.52);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle executive accent bar */
+.about-credential-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.85), rgba(167, 139, 250, 0.85), rgba(251, 113, 133, 0.70));
+  opacity: 0.9;
+}
+
+/* title row */
+.about-credential-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  margin-bottom: 14px;
+  color: rgba(231, 236, 246, 0.96);
+}
+
+.about-credential-block h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.22), transparent);
+  margin-left: 10px;
+}
+
+/* each item becomes a clean “row” */
+.credential-item {
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  margin-bottom: 12px;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.credential-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.22);
+  background: rgba(34, 211, 238, 0.06);
+}
+
+/* hierarchy */
+.credential-title {
+  font-weight: 800;
+  font-size: 13.5px;
+  color: rgba(231, 236, 246, 0.96);
+  line-height: 1.35;
+}
+
+.credential-meta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(231, 236, 246, 0.62);
+}
+
+/* optional: tighten spacing on mobile */
+@media (max-width: 900px) {
+  .about-credential-block {
+    padding: 16px;
+  }
+
+  .credential-item {
+    padding: 11px 11px;
+  }
+}
+
+/* ==========================================================
+   ABOUT: Premium Executive Icons for Credentials Section
+   ========================================================== */
+
+/* Add left icon badge */
+.about-credential-block h3 {
+  position: relative;
+  padding-left: 38px;
+  /* space for icon */
+}
+
+/* Icon container */
+.about-credential-block h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+
+  background:
+    radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.9), rgba(124, 58, 237, 0.9));
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Icon glyph inside badge */
+.about-credential-block:nth-child(1) h3::after,
+.about-credential-block:nth-child(2) h3::after {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #070B14;
+  font-weight: 900;
+}
+
+/* Certifications icon (shield) */
+.about-credential-block:nth-child(1) h3::after {
+  content: "✓";
+}
+
+/* Education icon (book style) */
+.about-credential-block:nth-child(2) h3::after {
+  content: "◼";
+  font-size: 10px;
+  letter-spacing: -1px;
+}
