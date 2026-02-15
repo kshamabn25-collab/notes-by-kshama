@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dependency Register | Global Data Center Capacity Scheduling</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../../index.html" class="logo">Notes by Kshama</a>
+        <div class="nav-links">
+            <a href="../../about.html">About</a>
+            <a href="../../resources.html">Resources</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Dependency Register</h1>
+        <p class="subtitle">Key cross-segment dependencies, risk rating, owners, and resolution status.</p>
+    </header>
+
+    <main>
+        <article class="post post-work">
+            <h1>Dependency Register (sample)</h1>
+
+            <p class="soft-note">
+                The table below is a simplified representation. In practice, each dependency links to a milestone chain
+                and escalation rule.
+            </p>
+
+            <div class="disclaimer-box">
+                <h2>How I use this register</h2>
+                <ul>
+                    <li>Tracked weekly with owners; escalated if no movement within agreed SLA</li>
+                    <li>Linked to IMS milestones to avoid “invisible blockers”</li>
+                    <li>Status must include next action + due date (not just “in progress”)</li>
+                </ul>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Dependency</th>
+                        <th>Upstream Owner</th>
+                        <th>Downstream Impact</th>
+                        <th>Risk</th>
+                        <th>Status / Next step</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DEP-01</td>
+                        <td>Utility approval for power energisation</td>
+                        <td>Power Segment Lead</td>
+                        <td>Blocks commissioning start</td>
+                        <td>High</td>
+                        <td>Escalate approval pathway; confirm target date + evidence</td>
+                    </tr>
+                    <tr>
+                        <td>DEP-02</td>
+                        <td>Long-lead equipment delivery window</td>
+                        <td>Supply Chain Owner</td>
+                        <td>Shifts install/test sequence across two sites</td>
+                        <td>Medium</td>
+                        <td>Lock shipping plan; define alternate supplier/sequence</td>
+                    </tr>
+                    <tr>
+                        <td>DEP-03</td>
+                        <td>Network integration window alignment</td>
+                        <td>Network Program Lead</td>
+                        <td>Impacts commissioning completion date</td>
+                        <td>Medium</td>
+                        <td>Confirm integration slot; publish dependencies to IMS</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="soft-note">
+                ← Back to <a href="index.html">Pack index</a>
+            </p>
+        </article>
+    </main>
+
+    <footer>
+        <p>© 2026 Notes by Kshama</p>
+    </footer>
+
+</body>
+
+</html>
