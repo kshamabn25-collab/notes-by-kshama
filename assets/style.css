@@ -1,5 +1,5 @@
 /* ==========================================================
-   Notes by Kshama — Dark Professional Theme (Full CSS)
+   Kshama — Dark Professional Theme (Full CSS)
    Copy-paste this entire file to assets/style.css
    ========================================================== */
 
@@ -609,6 +609,17 @@ main {
   box-shadow: var(--shadow-sm);
 }
 
+.section-icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.section-icon {
+  flex: 0 0 38px;
+  /* prevents shrink on small screens */
+}
+
 .home-section-head p {
   color: var(--muted);
 }
@@ -1037,4 +1048,38 @@ footer {
   .post h2 {
     margin-top: 34px;
   }
+}
+
+/* Home section differentiation */
+.home-section--resources .section-title {
+  color: rgba(231, 236, 246, 0.96);
+}
+
+.home-section--resources .section-icon {
+  border-color: rgba(34, 211, 238, 0.28);
+  background: rgba(34, 211, 238, 0.10);
+}
+
+.home-section--stories {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.home-section--stories .section-icon {
+  border-color: rgba(251, 113, 133, 0.28);
+  background: rgba(251, 113, 133, 0.10);
+}
+
+/* Optional: subtle section tint behind each grid */
+.home-section--resources .pack-grid .pack-tile {
+  background:
+    radial-gradient(900px 260px at 20% 10%, rgba(34, 211, 238, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+}
+
+.home-section--stories .pack-grid .pack-tile {
+  background:
+    radial-gradient(900px 260px at 20% 10%, rgba(251, 113, 133, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
 }
