@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Risk Register – Irish Biologics Expansion</title>
+    <link rel="stylesheet" href="../../assets/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../../index.html" class="logo">Kshama</a>
+        <div class="nav-links">
+            <a href="../../about.html">About</a>
+            <a href="../../resources.html">Resources</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Risk Register (RAG)</h1>
+        <p class="subtitle">
+            Quantified risk governance with inherent vs residual scoring (Probability × Impact),
+            aligned to brownfield sterile biologics expansion delivery.
+        </p>
+    </header>
+
+    <main>
+
+        <section class="content-card">
+
+            <div class="tags-row">
+                <span class="tag tag-work">Risk Governance</span>
+                <span class="tag tag-pm">P×I Scoring</span>
+                <span class="tag tag-digital">Residual Risk</span>
+                <span class="tag tag-hybrid">Inspection Readiness</span>
+            </div>
+
+            <h2>Scoring Model</h2>
+            <p>
+                Risks are scored using a 1–5 scale for Probability (P) and Impact (I). Inherent risk reflects the
+                pre-mitigation exposure. Residual risk reflects expected exposure after mitigation and controls.
+                Scores are reviewed on cadence and escalated through Steering if residual exposure remains high.
+            </p>
+
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>Measure</th>
+                        <th>Scale</th>
+                        <th>Examples (Context)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Probability (P)</strong></td>
+                        <td>1–5</td>
+                        <td>Rare (1) → Almost Certain (5)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Impact (I)</strong></td>
+                        <td>1–5</td>
+                        <td>Minimal (1) → Critical (5) across compliance, schedule, cost, supply continuity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Score</strong></td>
+                        <td>P × I (1–25)</td>
+                        <td>Used for prioritisation and governance intensity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RAG</strong></td>
+                        <td>Thresholds</td>
+                        <td>
+                            <span class="rag-pill rag-green">Green</span> 1–6 &nbsp; · &nbsp;
+                            <span class="rag-pill rag-amber">Amber</span> 7–12 &nbsp; · &nbsp;
+                            <span class="rag-pill rag-red">Red</span> 13–25
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <h2>Risk Register</h2>
+            <p class="soft-note">
+                Tip: On mobile, scroll the table horizontally. The header is sticky (if you added the CSS enhancement),
+                and the first columns are sticky on desktop for faster review.
+            </p>
+
+            <div class="table-wrap">
+                <table class="risk-table">
+                    <thead>
+                        <tr>
+                            <th class="sticky-col">ID</th>
+                            <th class="sticky-col-2">Risk Statement</th>
+                            <th>Category</th>
+                            <th>Owner</th>
+
+                            <th>P</th>
+                            <th>I</th>
+                            <th>Inherent</th>
+
+                            <th>Mitigation / Controls</th>
+                            <th>Trigger / Early Warning</th>
+                            <th>Contingency</th>
+
+                            <th>Residual</th>
+                            <th>Residual RAG</th>
+                            <th>Due / Review</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td class="sticky-col">R1</td>
+                            <td class="sticky-col-2">Vendor bioreactor FAT failure (weld integrity / surface finish)
+                                delays delivery and compresses installation & validation windows.</td>
+                            <td>Supply Chain / Technical</td>
+                            <td>Engineering Lead</td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill">5</span></td>
+                            <td><span class="score-pill score-red">20</span></td>
+                            <td>Enhanced vendor quality plan, QA witness points, early doc review, contractual
+                                escalation and rework thresholds.</td>
+                            <td>NCR trend, delayed FAT pack, repeated rework cycles, weld map deviations beyond
+                                tolerance.</td>
+                            <td>Parallel rework approval route; resequence HVAC/automation work; preserve CQV critical
+                                path; alternate fabrication slot (pre-agreed).</td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Monthly until FAT complete</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R2</td>
+                            <td class="sticky-col-2">Utilities load overcapacity (WFI / clean steam / HVAC) causes
+                                revalidation failure or unplanned scope increase.</td>
+                            <td>Operational / Technical</td>
+                            <td>Utilities Lead</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">5</span></td>
+                            <td><span class="score-pill score-red">15</span></td>
+                            <td>Early load modelling (±5% margin), staged commissioning, validated boundary isolation
+                                plan, QA review of test acceptance criteria.</td>
+                            <td>Capacity excursions, unstable pressure cascades, repeated alarms during SAT, HVAC
+                                balancing drift.</td>
+                            <td>Temporary capacity solutions; controlled downtime windows; modular utility add-ons;
+                                scope switch approvals via CCB.</td>
+                            <td><span class="score-pill score-amber">9</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Biweekly during commissioning</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R3</td>
+                            <td class="sticky-col-2">Cleanroom ISO classification fails at handover due to airflow
+                                patterns, leakage paths, particle counts or differential pressure instability.</td>
+                            <td>Quality / Operational</td>
+                            <td>Construction PM</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">5</span></td>
+                            <td><span class="score-pill score-red">15</span></td>
+                            <td>Progressive room readiness checks, strict penetration control, smoke studies early,
+                                staged certification, contractor quality gates.</td>
+                            <td>Rework on seals/penetrations, particle count excursions, airflow imbalance, cascade not
+                                holding during trials.</td>
+                            <td>Extended balancing window, specialist commissioning support, temporary operating
+                                restrictions, controlled rework sprints.</td>
+                            <td><span class="score-pill score-amber">10</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Weekly during cleanroom completion</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R4</td>
+                            <td class="sticky-col-2">EU GMP Annex 1 interpretation changes introduce additional
+                                contamination control requirements after design freeze.</td>
+                            <td>Regulatory / Quality</td>
+                            <td>QA Lead</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td>Quality-led design checkpoints, CCS alignment workshops, maintain inspection file with
+                                rationale & traceability.</td>
+                            <td>Emerging industry findings, HPRA feedback themes, CCS narrative gaps, audit observation
+                                trends.</td>
+                            <td>Rapid gap remediation plan; targeted retrofit scope; pre-approved minor layout
+                                adjustments and SOP updates.</td>
+                            <td><span class="score-pill score-green">6</span></td>
+                            <td><span class="rag-pill rag-green">Green</span></td>
+                            <td>Monthly until inspection</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R5</td>
+                            <td class="sticky-col-2">CSV gaps (audit trails, access controls, Part 11 evidence) delay
+                                validation release for automation and batch records.</td>
+                            <td>Quality / Digital</td>
+                            <td>Automation Lead</td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill score-red">16</span></td>
+                            <td>Approved validation plan, supplier assessment, scripted OQ aligned to URS, security
+                                matrix and DI review gates.</td>
+                            <td>Late requirements changes, missing vendor test packs, unresolved deviations, incomplete
+                                security roles.</td>
+                            <td>Specialist CSV contractors; phased system release; temporary manual controls with QA;
+                                expedited deviation review.</td>
+                            <td><span class="score-pill score-amber">9</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Weekly during OQ/PQ</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R6</td>
+                            <td class="sticky-col-2">Vendor documentation incomplete (MTRs, calibration certs, manuals)
+                                blocks IQ approval and delays CQV closeout.</td>
+                            <td>Supply Chain / Quality</td>
+                            <td>CQV Lead</td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td>Doc readiness tracker with due dates, enforce contractual deliverables, document review
+                                sprints with vendors.</td>
+                            <td>Late doc pack, repeated review cycles, missing traceability to tags, incomplete as-built
+                                drawings.</td>
+                            <td>Conditional IQ acceptance with defined closures; substitute evidence pathway;
+                                procurement escalation for leverage.</td>
+                            <td><span class="score-pill score-amber">8</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Weekly until IQ closeout</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R7</td>
+                            <td class="sticky-col-2">Brownfield tie-in works impact live production (planned downtime
+                                overruns or contamination risk at interface points).</td>
+                            <td>Operational</td>
+                            <td>Site Ops Lead</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">5</span></td>
+                            <td><span class="score-pill score-red">15</span></td>
+                            <td>Permit-to-work, isolation plans, QA oversight at interfaces, rehearsed cutover steps,
+                                shift-based execution windows.</td>
+                            <td>Isolation gaps, access constraints, abnormal alarms in live utilities, near-miss
+                                incident reports.</td>
+                            <td>Rollback plan with predefined stop points; buffer inventory; move tie-in to next
+                                approved window.</td>
+                            <td><span class="score-pill score-green">6</span></td>
+                            <td><span class="rag-pill rag-green">Green</span></td>
+                            <td>Per tie-in window</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R8</td>
+                            <td class="sticky-col-2">Environmental monitoring baseline shifts post-build drive OOS/OOT
+                                trends during PQ and ramp-up.</td>
+                            <td>Quality</td>
+                            <td>Microbiology Lead</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td>Progressive EM mapping, cleaning validation tightening, routine trend reviews during PQ,
+                                targeted intervention minimisation.</td>
+                            <td>Recurring excursion points, rising particle counts, increased interventions during media
+                                fills/simulations.</td>
+                            <td>Targeted remediation (airflow, cleaning SOPs), extended EM studies, adjust operational
+                                controls with QA approval.</td>
+                            <td><span class="score-pill score-amber">8</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Weekly during PQ</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R9</td>
+                            <td class="sticky-col-2">Data integrity gaps in controlled documents (versioning, sign-off
+                                traceability) weaken inspection readiness and governance confidence.</td>
+                            <td>Quality / Compliance</td>
+                            <td>Quality Systems Lead</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">5</span></td>
+                            <td><span class="score-pill score-red">15</span></td>
+                            <td>Single source of truth repository, document readiness index, periodic internal audits,
+                                inspection file ownership.</td>
+                            <td>Uncontrolled copies, missing approvals, conflicting versions, delayed doc
+                                reconciliation.</td>
+                            <td>Remediation sprint; temporary freeze on issuing new docs until reconciled; structured
+                                back-capture and audit trail review.</td>
+                            <td><span class="score-pill score-green">6</span></td>
+                            <td><span class="rag-pill rag-green">Green</span></td>
+                            <td>Biweekly until inspection</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R10</td>
+                            <td class="sticky-col-2">Inspection booking changes or unexpected inspection scope expansion
+                                reduces available closure window before go-live.</td>
+                            <td>Regulatory</td>
+                            <td>Regulatory Liaison</td>
+                            <td><span class="score-pill">2</span></td>
+                            <td><span class="score-pill">5</span></td>
+                            <td><span class="score-pill score-amber">10</span></td>
+                            <td>Pre-inspection engagement cadence, readiness evidence packs, SME roster and audit room
+                                protocols confirmed early.</td>
+                            <td>Changed inspector availability, additional requested evidence sets, increased pre-reads,
+                                new focus areas.</td>
+                            <td>Rapid response documentation sprint; extend SME coverage; prioritise closure of critical
+                                systems first.</td>
+                            <td><span class="score-pill score-green">6</span></td>
+                            <td><span class="rag-pill rag-green">Green</span></td>
+                            <td>Monthly until inspection</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R11</td>
+                            <td class="sticky-col-2">Validation deviation volume increases during late-stage execution,
+                                creating approval bottlenecks and CQV rework.</td>
+                            <td>Quality / Delivery</td>
+                            <td>CQV Lead</td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td>Deviation triage, standard impact templates, weekly review cadence, clear closure
+                                ownership and due dates.</td>
+                            <td>Backlog trend rising, repeated re-submissions, unclear impact ratings, late evidence
+                                uploads.</td>
+                            <td>Increase review frequency; dedicate reviewers; “fast-track” low-risk deviations;
+                                temporary weekend review cadence.</td>
+                            <td><span class="score-pill score-amber">8</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Weekly during peak CQV</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R12</td>
+                            <td class="sticky-col-2">CCB volume spikes during execution cause late design changes and
+                                schedule churn, impacting readiness gates.</td>
+                            <td>Governance</td>
+                            <td>PMO Lead</td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td>Change freeze windows, triage board, delegated approval tiers, standardised impact
+                                assessment for GMP/schedule/cost.</td>
+                            <td>CCB backlog, unclear GMP impacts, repeated resubmissions, late change requests after
+                                design freeze.</td>
+                            <td>Increase CCB cadence; temporary approval delegation; “fast lane” for low-risk changes;
+                                re-baseline with exec sign-off.</td>
+                            <td><span class="score-pill score-green">6</span></td>
+                            <td><span class="rag-pill rag-green">Green</span></td>
+                            <td>Weekly during peak changes</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R13</td>
+                            <td class="sticky-col-2">Commissioning completion slips due to contractor sequencing
+                                conflicts (HVAC / electrical / instrumentation) delaying IQ start.</td>
+                            <td>Schedule / Delivery</td>
+                            <td>Construction PM</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td>Daily look-ahead planning, interface matrix, locked handover checklists, readiness gates
+                                per system.</td>
+                            <td>High rework rates, missed handover criteria, incomplete punch lists, repeated access
+                                conflicts.</td>
+                            <td>Deploy additional supervisors; restructure sequencing; weekend shifts; re-baseline
+                                handover dates with CQV priorities.</td>
+                            <td><span class="score-pill score-amber">8</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Weekly during commissioning</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R14</td>
+                            <td class="sticky-col-2">Supply continuity buffer becomes insufficient if ramp-up is
+                                delayed, increasing customer allocation and service risk.</td>
+                            <td>Commercial / Operational</td>
+                            <td>Supply Chain Lead</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">4</span></td>
+                            <td><span class="score-pill score-amber">12</span></td>
+                            <td>Ramp-up plan with staged capacity release; inventory policy review; coordination with
+                                network sites and QP planning.</td>
+                            <td>PQ closure delays, constrained batch release, forecast variance increase, rise in
+                                expedite requests.</td>
+                            <td>Activate alternate site support; prioritise markets; extend safety stock through
+                                controlled overtime and scheduling.</td>
+                            <td><span class="score-pill score-amber">8</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Monthly during ramp-up</td>
+                            <td>Active</td>
+                        </tr>
+
+                        <tr>
+                            <td class="sticky-col">R15</td>
+                            <td class="sticky-col-2">Qualified Person (QP) release readiness lag (documentation
+                                completeness, closure evidence) delays commercial release decision.</td>
+                            <td>Quality / Release</td>
+                            <td>QA Lead</td>
+                            <td><span class="score-pill">3</span></td>
+                            <td><span class="score-pill">5</span></td>
+                            <td><span class="score-pill score-red">15</span></td>
+                            <td>QP readiness checklist, weekly closure reviews, doc readiness index linked to release
+                                gate, pre-review of key evidence sets.</td>
+                            <td>Missing approvals, incomplete deviation closures, delayed EM trend reports, unresolved
+                                open actions.</td>
+                            <td>Release readiness sprint; dedicated reviewers; prioritised evidence closures; escalate
+                                for targeted decision support.</td>
+                            <td><span class="score-pill score-amber">9</span></td>
+                            <td><span class="rag-pill rag-amber">Amber</span></td>
+                            <td>Weekly during PQ closeout</td>
+                            <td>Active</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <h2>Residual Risk Escalation Rule</h2>
+            <ul>
+                <li>Residual score <strong>≤ 6</strong>: Managed within workstream governance.</li>
+                <li>Residual score <strong>7–12</strong>: Weekly review until stable.</li>
+                <li>Residual score <strong>≥ 13</strong>: Steering escalation + formal decision record (risk acceptance
+                    or additional controls).</li>
+            </ul>
+
+        </section>
+    </main>
+
+    <footer>© 2026 Kshama</footer>
+
+</body>
+
+</html>

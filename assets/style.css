@@ -1551,3 +1551,75 @@ footer {
   font-size: 10px;
   letter-spacing: -1px;
 }
+
+/* ==========================================================
+   Risk Register Enhancements: score pills + sticky headers
+   ========================================================== */
+
+/* Score pills (for P/I and P×I cells) */
+.score-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(231, 236, 246, 0.92);
+}
+
+/* Inherent/Residual score coloring */
+.score-green {
+  background: rgba(52, 211, 153, 0.16);
+  border-color: rgba(52, 211, 153, 0.28);
+}
+
+.score-amber {
+  background: rgba(245, 158, 11, 0.16);
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
+.score-red {
+  background: rgba(251, 113, 133, 0.16);
+  border-color: rgba(251, 113, 133, 0.28);
+}
+
+/* Risk table readability improvements */
+.table-wrap table.risk-table {
+  min-width: 1400px;
+  /* ensures columns don't crush */
+}
+
+/* Sticky header inside scroll wrapper */
+.table-wrap table.risk-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+/* Optional: make first 2 columns sticky for large risk tables */
+@media (min-width: 900px) {
+
+  .table-wrap table.risk-table th.sticky-col,
+  .table-wrap table.risk-table td.sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .table-wrap table.risk-table th.sticky-col-2,
+  .table-wrap table.risk-table td.sticky-col-2 {
+    position: sticky;
+    left: 70px;
+    /* approximate width of ID col */
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
