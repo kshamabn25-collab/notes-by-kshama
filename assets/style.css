@@ -1,9 +1,11 @@
 /* ==========================================================
-   Kshama — Dark Professional Theme (Full CSS)
+   Kshama — Dark Professional Theme (Hygiene Pass)
    Copy-paste this entire file to assets/style.css
    ========================================================== */
 
-/* Reset & Base */
+/* ==========================================================
+   Reset & Base
+   ========================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -381,8 +383,6 @@ main {
 /* ==========================================================
    Long-form posts (shared across Work/Voice/Life)
    ========================================================== */
-
-/* Theme variables */
 .post {
   --accent-1: var(--a1);
   --accent-2: var(--a2);
@@ -607,17 +607,14 @@ main {
   border: 1px solid var(--border);
   color: rgba(231, 236, 246, 0.88);
   box-shadow: var(--shadow-sm);
+  flex: 0 0 38px;
+  /* prevents shrink on small screens */
 }
 
 .section-icon svg {
   width: 20px;
   height: 20px;
   display: block;
-}
-
-.section-icon {
-  flex: 0 0 38px;
-  /* prevents shrink on small screens */
 }
 
 .home-section-head p {
@@ -660,12 +657,12 @@ main {
 
   padding: 18px;
   border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+
   background:
     radial-gradient(900px 260px at 20% 10%, rgba(34, 211, 238, 0.12), transparent 60%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
 
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
@@ -777,16 +774,47 @@ main {
   color: var(--link-hover);
 }
 
-/* Soft note helper */
 .soft-note {
   color: var(--muted);
+}
+
+/* Home section differentiation */
+.home-section--resources .section-title {
+  color: rgba(231, 236, 246, 0.96);
+}
+
+.home-section--resources .section-icon {
+  border-color: rgba(34, 211, 238, 0.28);
+  background: rgba(34, 211, 238, 0.10);
+}
+
+.home-section--stories {
+  margin-top: 26px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.home-section--stories .section-icon {
+  border-color: rgba(251, 113, 133, 0.28);
+  background: rgba(251, 113, 133, 0.10);
+}
+
+/* Optional: subtle section tint behind each grid */
+.home-section--resources .pack-grid .pack-tile {
+  background:
+    radial-gradient(900px 260px at 20% 10%, rgba(34, 211, 238, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+}
+
+.home-section--stories .pack-grid .pack-tile {
+  background:
+    radial-gradient(900px 260px at 20% 10%, rgba(251, 113, 133, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
 }
 
 /* ==========================================================
    Resources helpers: disclaimer box, tags, tables, RAG pills
    ========================================================== */
-
-/* Disclaimer box */
 .disclaimer-box {
   margin: 18px 0 22px;
   padding: 16px 16px;
@@ -812,7 +840,7 @@ main {
   color: rgba(231, 236, 246, 0.88);
 }
 
-/* Tags row (if used in pack pages) */
+/* Tags row */
 .tags-row {
   display: flex;
   flex-wrap: wrap;
@@ -1050,45 +1078,10 @@ footer {
   }
 }
 
-/* Home section differentiation */
-.home-section--resources .section-title {
-  color: rgba(231, 236, 246, 0.96);
-}
-
-.home-section--resources .section-icon {
-  border-color: rgba(34, 211, 238, 0.28);
-  background: rgba(34, 211, 238, 0.10);
-}
-
-.home-section--stories {
-  margin-top: 26px;
-  padding-top: 26px;
-  border-top: 1px solid rgba(148, 163, 184, 0.14);
-}
-
-.home-section--stories .section-icon {
-  border-color: rgba(251, 113, 133, 0.28);
-  background: rgba(251, 113, 133, 0.10);
-}
-
-/* Optional: subtle section tint behind each grid */
-.home-section--resources .pack-grid .pack-tile {
-  background:
-    radial-gradient(900px 260px at 20% 10%, rgba(34, 211, 238, 0.14), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-}
-
-.home-section--stories .pack-grid .pack-tile {
-  background:
-    radial-gradient(900px 260px at 20% 10%, rgba(251, 113, 133, 0.12), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-}
-
 /* ==========================================================
    ABOUT PAGE (Restored & Dark Optimised)
    Matches structure in about.html
    ========================================================== */
-
 .about-hero {
   margin-top: 40px;
 }
@@ -1147,20 +1140,85 @@ footer {
   margin-left: auto;
 }
 
+@keyframes bubbleGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .about-bubble {
+  position: relative;
+  isolation: isolate;
+
   padding: 14px 18px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  min-width: 150px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+
   backdrop-filter: blur(6px);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-  min-width: 150px;
+
   transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* gradient outline layer */
+.about-bubble::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  padding: 1px;
+
+  background: linear-gradient(120deg,
+      rgba(34, 211, 238, 0.85),
+      rgba(167, 139, 250, 0.85),
+      rgba(251, 113, 133, 0.65),
+      rgba(34, 211, 238, 0.85));
+  background-size: 300% 300%;
+  animation: bubbleGlow 6s ease-in-out infinite;
+
+  z-index: -1;
+  opacity: 0.65;
+
+  /* make it an outline only */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* subtle inner highlight */
+.about-bubble::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(500px 160px at 20% 10%, rgba(255, 255, 255, 0.08), transparent 55%);
+  z-index: -1;
+  opacity: 0.9;
 }
 
 .about-bubble:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+.about-bubble:hover::before {
+  opacity: 0.9;
 }
 
 .bubble-title {
@@ -1250,34 +1308,133 @@ footer {
   color: #E7ECF6;
 }
 
-/* Credentials */
+/* Credentials (final “tight + structured” values preserved) */
 .about-credentials {
-  margin-top: 40px;
+  margin-top: 38px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 22px;
 }
 
+.about-credential-block {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  padding: 18px 18px;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.52);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle executive accent bar */
+.about-credential-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.85), rgba(167, 139, 250, 0.85), rgba(251, 113, 133, 0.70));
+  opacity: 0.9;
+}
+
+/* heading row */
 .about-credential-block h3 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 12px;
-  font-size: 18px;
-  color: #E7ECF6;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  margin-bottom: 14px;
+  color: rgba(231, 236, 246, 0.96);
+
+  position: relative;
+  padding-left: 38px;
+  /* space for icon badge */
 }
 
+/* icon container */
+.about-credential-block h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+
+  background: radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.9), rgba(124, 58, 237, 0.9));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* divider line (note: overridden for first two blocks by nth-child ::after glyph below — preserved behaviour) */
+.about-credential-block h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.22), transparent);
+  margin-left: 10px;
+}
+
+/* each item becomes a clean “row” */
 .credential-item {
-  margin-bottom: 14px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  margin-bottom: 12px;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.credential-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(34, 211, 238, 0.22);
+  background: rgba(34, 211, 238, 0.06);
 }
 
 .credential-title {
-  font-weight: 700;
-  font-size: 14px;
-  color: #E7ECF6;
+  font-weight: 800;
+  font-size: 13.5px;
+  color: rgba(231, 236, 246, 0.96);
+  line-height: 1.35;
 }
 
 .credential-meta {
+  margin-top: 4px;
   font-size: 12px;
-  color: rgba(231, 236, 246, 0.60);
+  color: rgba(231, 236, 246, 0.62);
+}
+
+/* icon glyph inside badge (preserve original behaviour) */
+.about-credential-block:nth-child(1) h3::after,
+.about-credential-block:nth-child(2) h3::after {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #070B14;
+  font-weight: 900;
+
+  /* overrides divider line content on first two blocks */
+  content: "";
+  width: auto;
+  height: auto;
+  background: none;
+  margin: 0;
+  flex: none;
+}
+
+.about-credential-block:nth-child(1) h3::after {
+  content: "✓";
+}
+
+.about-credential-block:nth-child(2) h3::after {
+  content: "◼";
+  font-size: 10px;
+  letter-spacing: -1px;
 }
 
 /* Secondary structured section */
@@ -1308,7 +1465,7 @@ footer {
   color: rgba(231, 236, 246, 0.75);
 }
 
-/* Responsive */
+/* About responsive */
 @media (max-width: 900px) {
   .about-top {
     flex-direction: column;
@@ -1328,169 +1485,7 @@ footer {
   .about-sections {
     grid-template-columns: 1fr;
   }
-}
 
-/* ==========================================================
-   ABOUT: Animated gradient outline for bubbles
-   ========================================================== */
-
-@keyframes bubbleGlow {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.about-bubble {
-  position: relative;
-  isolation: isolate;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-}
-
-/* gradient outline layer */
-.about-bubble::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: 16px;
-  padding: 1px;
-  background: linear-gradient(120deg,
-      rgba(34, 211, 238, 0.85),
-      rgba(167, 139, 250, 0.85),
-      rgba(251, 113, 133, 0.65),
-      rgba(34, 211, 238, 0.85));
-  background-size: 300% 300%;
-  animation: bubbleGlow 6s ease-in-out infinite;
-  z-index: -1;
-  opacity: 0.65;
-
-  /* make it an outline only */
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-}
-
-/* subtle inner highlight */
-.about-bubble::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 16px;
-  background: radial-gradient(500px 160px at 20% 10%, rgba(255, 255, 255, 0.08), transparent 55%);
-  z-index: -1;
-  opacity: 0.9;
-}
-
-.about-bubble:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
-}
-
-.about-bubble:hover::before {
-  opacity: 0.9;
-}
-
-/* Reduce motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .about-bubble::before {
-    animation: none !important;
-  }
-}
-
-/* ==========================================================
-   ABOUT: Executive credentials styling
-   ========================================================== */
-
-.about-credentials {
-  margin-top: 38px;
-  gap: 22px;
-  /* tighter, more structured */
-}
-
-.about-credential-block {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(148, 163, 184, 0.18);
-  border-radius: 18px;
-  padding: 18px 18px;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.52);
-  position: relative;
-  overflow: hidden;
-}
-
-/* subtle executive accent bar */
-.about-credential-block::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, rgba(34, 211, 238, 0.85), rgba(167, 139, 250, 0.85), rgba(251, 113, 133, 0.70));
-  opacity: 0.9;
-}
-
-/* title row */
-.about-credential-block h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-  margin-bottom: 14px;
-  color: rgba(231, 236, 246, 0.96);
-}
-
-.about-credential-block h3::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(148, 163, 184, 0.22), transparent);
-  margin-left: 10px;
-}
-
-/* each item becomes a clean “row” */
-.credential-item {
-  padding: 12px 12px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(148, 163, 184, 0.14);
-  margin-bottom: 12px;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-}
-
-.credential-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(34, 211, 238, 0.22);
-  background: rgba(34, 211, 238, 0.06);
-}
-
-/* hierarchy */
-.credential-title {
-  font-weight: 800;
-  font-size: 13.5px;
-  color: rgba(231, 236, 246, 0.96);
-  line-height: 1.35;
-}
-
-.credential-meta {
-  margin-top: 4px;
-  font-size: 12px;
-  color: rgba(231, 236, 246, 0.62);
-}
-
-/* optional: tighten spacing on mobile */
-@media (max-width: 900px) {
   .about-credential-block {
     padding: 16px;
   }
@@ -1500,63 +1495,16 @@ footer {
   }
 }
 
-/* ==========================================================
-   ABOUT: Premium Executive Icons for Credentials Section
-   ========================================================== */
-
-/* Add left icon badge */
-.about-credential-block h3 {
-  position: relative;
-  padding-left: 38px;
-  /* space for icon */
-}
-
-/* Icon container */
-.about-credential-block h3::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 26px;
-  height: 26px;
-  border-radius: 8px;
-
-  background:
-    radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.9), rgba(124, 58, 237, 0.9));
-
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
-}
-
-/* Icon glyph inside badge */
-.about-credential-block:nth-child(1) h3::after,
-.about-credential-block:nth-child(2) h3::after {
-  position: absolute;
-  left: 6px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 14px;
-  color: #070B14;
-  font-weight: 900;
-}
-
-/* Certifications icon (shield) */
-.about-credential-block:nth-child(1) h3::after {
-  content: "✓";
-}
-
-/* Education icon (book style) */
-.about-credential-block:nth-child(2) h3::after {
-  content: "◼";
-  font-size: 10px;
-  letter-spacing: -1px;
+/* Reduce motion preference for bubble outline */
+@media (prefers-reduced-motion: reduce) {
+  .about-bubble::before {
+    animation: none !important;
+  }
 }
 
 /* ==========================================================
    Risk Register Enhancements: score pills + sticky headers
    ========================================================== */
-
-/* Score pills (for P/I and P×I cells) */
 .score-pill {
   display: inline-flex;
   align-items: center;
@@ -1572,7 +1520,6 @@ footer {
   color: rgba(231, 236, 246, 0.92);
 }
 
-/* Inherent/Residual score coloring */
 .score-green {
   background: rgba(52, 211, 153, 0.16);
   border-color: rgba(52, 211, 153, 0.28);
@@ -1621,5 +1568,96 @@ footer {
     /* approximate width of ID col */
     z-index: 4;
     background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* ==========================================================
+   Series Badge (Animated) — for highlighting series content
+   Usage: <span class="series-badge">Series</span>
+   ========================================================== */
+.series-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  line-height: 1;
+
+  color: rgba(231, 236, 246, 0.92);
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(34, 211, 238, 0.10);
+
+  transform: translateZ(0);
+}
+
+/* dot */
+.series-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+
+  background: radial-gradient(circle at 35% 35%,
+      rgba(34, 211, 238, 0.95),
+      rgba(124, 58, 237, 0.85));
+
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.10);
+}
+
+/* shimmer */
+.series-badge::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+
+  background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.20) 18%,
+      transparent 36%);
+
+  transform: translateX(-120%);
+  animation: seriesShimmer 3.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.75;
+}
+
+@keyframes seriesShimmer {
+  0% {
+    transform: translateX(-140%);
+  }
+
+  55% {
+    transform: translateX(140%);
+  }
+
+  100% {
+    transform: translateX(140%);
+  }
+}
+
+.series-badge--tight {
+  margin-left: 10px;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .series-badge::after {
+    animation: none !important;
+    display: none;
   }
 }
