@@ -26,13 +26,12 @@
     <div class="hero-inner reveal">
       <h1>A Quiet Archive of Work and Becoming</h1>
       <p class="subtitle">
-        Stories and frameworks from project life, leadership rooms, and ordinary days —
-        for anyone building something, including themselves.
+        Stories, case packs, and PM tool deep dives — built for real delivery thinking.
       </p>
 
       <div class="hero-cta">
         <a class="btn-primary" href="resources.html">Explore Project Library →</a>
-        <a class="btn-secondary" href="buckets/work.html">Read Project Stories →</a>
+        <a class="btn-secondary" href="buckets/pm-tools.html">Explore PM Tools →</a>
       </div>
     </div>
 
@@ -43,10 +42,103 @@
 
   <main>
 
-    <!-- Practice Library -->
-    <section class="home-section home-section--resources">
+    <!-- Quick Navigation Strip -->
+    <section class="content-card reveal" style="margin-top:18px;">
+      <div class="tags-row" style="margin-top:0;">
+        <a class="tag tag-work" href="#pm-tools">PM Tools</a>
+        <a class="tag tag-digital" href="#project-library">Project Library</a>
+        <a class="tag tag-hybrid" href="#stories">Stories</a>
+        <a class="tag tag-pm" href="about.html">About</a>
+      </div>
+      <p class="soft-note" style="margin-top:10px;">
+        Pick a path — tools, case packs, or stories — and jump straight in.
+      </p>
+    </section>
+
+    <!-- PM Tools (Featured first) -->
+    <section id="pm-tools" class="home-section home-section--pmtools">
       <div class="home-section-head reveal">
         <h2 class="section-title" data-section="01">
+          <span class="section-icon" aria-hidden="true">
+            <!-- tool/wrench icon -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M21 6.5a5.5 5.5 0 0 1-7.9 5L7.2 17.4a2 2 0 0 1-2.8 0l-.8-.8a2 2 0 0 1 0-2.8l5.9-5.9A5.5 5.5 0 0 1 17.5 3l-2.2 2.2 3.5 3.5L21 6.5Z"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 18l-1 1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+          </span>
+          PM Tools
+          <span class="series-badge series-badge--tight">Series</span>
+        </h2>
+        <p>
+          Practical deep dives into tools used in construction, infrastructure, and technical delivery —
+          with real scheduling logic and governance discipline.
+        </p>
+      </div>
+
+      <div class="pack-grid">
+        <!-- LIVE -->
+        <a class="pack-tile reveal" href="posts/pm-tools/ms-project-construction.html">
+          <div class="pack-top">
+            <h3 class="pack-title">MS Project for Construction PMs</h3>
+            <span class="pack-chip">Live</span>
+          </div>
+
+          <p class="pack-desc">
+            WBS, dependency logic, critical path, resource leveling, baselines, and reporting views —
+            explained for construction & infrastructure delivery.
+          </p>
+
+          <div class="pack-footer">
+            <span class="pack-kicker">Read deep dive</span>
+            <span class="pack-arrow">→</span>
+          </div>
+        </a>
+
+        <!-- COMING SOON placeholders -->
+        <a class="pack-tile pack-tile-muted reveal" href="buckets/pm-tools.html">
+          <div class="pack-top">
+            <h3 class="pack-title">MS Project vs Primavera P6</h3>
+            <span class="pack-chip pack-chip-muted">Coming soon</span>
+          </div>
+
+          <p class="pack-desc">
+            When MS Project is enough, where P6 wins, and how scheduling governance shifts at scale.
+          </p>
+
+          <div class="pack-footer pack-footer-muted">
+            <span class="pack-kicker">View series</span>
+            <span class="pack-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="pack-tile pack-tile-muted reveal" href="buckets/pm-tools.html">
+          <div class="pack-top">
+            <h3 class="pack-title">Excel for Construction Controls</h3>
+            <span class="pack-chip pack-chip-muted">Coming soon</span>
+          </div>
+
+          <p class="pack-desc">
+            Practical trackers: cost, progress, variation logs, weekly dashboards — clean structure, real discipline.
+          </p>
+
+          <div class="pack-footer pack-footer-muted">
+            <span class="pack-kicker">View series</span>
+            <span class="pack-arrow">→</span>
+          </div>
+        </a>
+      </div>
+
+      <a class="inline-cta reveal" href="buckets/pm-tools.html">
+        Explore PM Tools →
+      </a>
+    </section>
+
+    <!-- Project Library -->
+    <section id="project-library" class="home-section home-section--resources">
+      <div class="home-section-head reveal">
+        <h2 class="section-title" data-section="02">
           <span class="section-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M4 19.5V6.5C4 5.12 5.12 4 6.5 4H20V20H6.5C5.12 20 4 18.88 4 17.5Z" stroke="currentColor"
@@ -68,17 +160,18 @@
             <h3 class="pack-title">Irish Biologics Facility Expansion</h3>
             <span class="pack-chip">Case Study Pack</span>
           </div>
-        
+
           <p class="pack-desc">
             A €180M brownfield sterile biologics expansion delivered under EU GMP and FDA oversight —
             focused on CQV discipline, inspection readiness, and capital governance.
           </p>
-        
+
           <div class="pack-footer">
             <span class="pack-kicker">Open pack</span>
             <span class="pack-arrow">→</span>
-          </div>    
+          </div>
         </a>
+
         <a class="pack-tile reveal" href="resources/citizen-life-events-wallet/index.html">
           <div class="pack-top">
             <h3 class="pack-title">Citizen Life Events Wallet</h3>
@@ -112,24 +205,6 @@
             <span class="pack-arrow">→</span>
           </div>
         </a>
-
-        <a class="pack-tile reveal" href="resources/microsoft-global-datacenter-capacity-scheduling/index.html">
-          <div class="pack-top">
-            <h3 class="pack-title">Global Data Center Capacity Scheduling</h3>
-            <span class="pack-chip">Case Study Pack</span>
-          </div>
-
-          <p class="pack-desc">
-            A Scheduling Program Manager case study pack built around an Integrated Master Schedule (IMS) —
-            portfolio-level CPM analysis, cross-segment dependency orchestration, schedule risk/sensitivity,
-            and executive decision reporting.
-          </p>
-
-          <div class="pack-footer">
-            <span class="pack-kicker">Open pack</span>
-            <span class="pack-arrow">→</span>
-          </div>
-        </a>
       </div>
 
       <a class="inline-cta reveal" href="resources.html">
@@ -138,9 +213,9 @@
     </section>
 
     <!-- Stories -->
-    <section class="home-section home-section--stories">
+    <section id="stories" class="home-section home-section--stories">
       <div class="home-section-head reveal">
-        <h2 class="section-title" data-section="02">
+        <h2 class="section-title" data-section="03">
           <span class="section-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path
@@ -209,6 +284,78 @@
 
           <div class="pack-footer">
             <span class="pack-kicker">Read stories</span>
+            <span class="pack-arrow">→</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Start Here (Guided Paths) -->
+    <section class="home-section home-section--start">
+      <div class="home-section-head reveal">
+        <h2 class="section-title" data-section="04">
+          <span class="section-icon" aria-hidden="true">
+            <!-- compass icon -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 22a10 10 0 1 0-10-10 10 10 0 0 0 10 10Z" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M14.7 9.3 13 13l-3.7 1.7L11 11l3.7-1.7Z" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          Start Here
+        </h2>
+        <p>
+          If you’re visiting for a specific reason, choose a guided path.
+        </p>
+      </div>
+
+      <div class="pack-grid">
+        <a class="pack-tile reveal" href="resources.html">
+          <div class="pack-top">
+            <h3 class="pack-title">If you’re interviewing</h3>
+            <span class="pack-chip">Recommended</span>
+          </div>
+
+          <p class="pack-desc">
+            Start with the Project Library — case packs built for structured storytelling, artefacts, and decision
+            depth.
+          </p>
+
+          <div class="pack-footer">
+            <span class="pack-kicker">Go to Project Library</span>
+            <span class="pack-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="pack-tile reveal" href="buckets/pm-tools.html">
+          <div class="pack-top">
+            <h3 class="pack-title">If you manage delivery</h3>
+            <span class="pack-chip">Practical</span>
+          </div>
+
+          <p class="pack-desc">
+            Start with PM Tools — scheduling logic, governance patterns, and tool discipline you can reuse.
+          </p>
+
+          <div class="pack-footer">
+            <span class="pack-kicker">Go to PM Tools</span>
+            <span class="pack-arrow">→</span>
+          </div>
+        </a>
+
+        <a class="pack-tile reveal" href="buckets/work.html">
+          <div class="pack-top">
+            <h3 class="pack-title">If you want reflective writing</h3>
+            <span class="pack-chip">Stories</span>
+          </div>
+
+          <p class="pack-desc">
+            Start with Work & Craft — the quieter side of projects: people, judgment, and delivery under constraints.
+          </p>
+
+          <div class="pack-footer">
+            <span class="pack-kicker">Go to Stories</span>
             <span class="pack-arrow">→</span>
           </div>
         </a>
