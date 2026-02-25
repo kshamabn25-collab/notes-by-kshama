@@ -1,6 +1,6 @@
 /* ==========================================================
-   Kshama — Dark Professional Theme (Hygiene Pass)
-   Copy-paste this entire file to assets/style.css
+   Kshama — LIGHT THEME (Clean, De-duplicated)
+   Palette: Alabaster / Powder Petal / Pastel Pink / Cherry Blossom / Dusty Mauve
    ========================================================== */
 
 /* ==========================================================
@@ -13,37 +13,47 @@
 }
 
 :root {
-  /* Core dark palette */
-  --bg: #070B14;
-  --bg-2: #060913;
-  --surface: #0B1220;
-  --surface-2: #0E172A;
-  --surface-3: rgba(255, 255, 255, 0.05);
+  /* Palette */
+  --alabaster-grey: #d8e2dcff;
+  --powder-petal: #ffe5d9ff;
+  --pastel-pink: #ffcad4ff;
+  --cherry-blossom: #f4acb7ff;
+  --dusty-mauve: #9d8189ff;
 
-  --ink: #E7ECF6;
-  --muted: rgba(231, 236, 246, 0.72);
-  --muted-2: rgba(231, 236, 246, 0.58);
-
-  --border: rgba(148, 163, 184, 0.16);
-  --border-2: rgba(148, 163, 184, 0.22);
-
-  /* Accent colours (popping but professional) */
-  --a1: #7C3AED;
-  /* violet */
-  --a2: #4dd9ee;
-  /* cyan */
-  --a3: #FB7185;
-  /* rose */
-
-  --link: var(--a2);
-  --link-hover: #A78BFA;
-
-  --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 16px 44px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.60);
-
+  /* Typography + layout */
   --radius: 16px;
-  --radius-lg: 20px;
+  --radius-lg: 22px;
+
+  /* Core tokens (Light Mode) */
+  --bg: #f7faf9;
+  /* airy, near-white */
+  --bg-2: #eef3f1;
+  /* gentle depth */
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-2: rgba(255, 255, 255, 0.90);
+  --surface-3: rgba(255, 255, 255, 0.70);
+
+  --ink: #2b2326;
+  /* warm ink for legibility */
+  --muted: rgba(43, 35, 38, 0.68);
+  --muted-2: rgba(43, 35, 38, 0.54);
+
+  --border: rgba(157, 129, 137, 0.24);
+  --border-2: rgba(157, 129, 137, 0.34);
+
+  /* Accents */
+  --a1: var(--dusty-mauve);
+  --a2: #c65a72;
+  /* deeper rose */
+  --a3: var(--cherry-blossom);
+
+  --link: #b04a62;
+  --link-hover: #7f4654;
+
+  /* Shadows */
+  --shadow-sm: 0 10px 26px rgba(30, 20, 24, 0.10);
+  --shadow-md: 0 16px 44px rgba(30, 20, 24, 0.14);
+  --shadow-lg: 0 26px 76px rgba(30, 20, 24, 0.16);
 }
 
 html,
@@ -54,18 +64,17 @@ body {
 body {
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--ink);
-  line-height: 1.75;
+  line-height: 1.85;
   background:
-    radial-gradient(900px 520px at 18% 10%, rgba(124, 58, 237, 0.22), rgba(124, 58, 237, 0) 60%),
-    radial-gradient(900px 520px at 82% 24%, rgba(34, 211, 238, 0.16), rgba(34, 211, 238, 0) 60%),
-    radial-gradient(900px 520px at 55% 95%, rgba(251, 113, 133, 0.12), rgba(251, 113, 133, 0) 60%),
+    radial-gradient(1200px 520px at 15% 0%, rgba(244, 172, 183, 0.35), transparent 60%),
+    radial-gradient(1000px 520px at 85% 10%, rgba(255, 202, 212, 0.30), transparent 58%),
     linear-gradient(180deg, var(--bg), var(--bg-2));
 }
 
 /* Links */
 a {
-  text-decoration: none;
   color: var(--link);
+  text-decoration: none;
 }
 
 a:hover {
@@ -85,9 +94,9 @@ nav {
   top: 0;
   z-index: 100;
 
-  background: rgba(11, 18, 32, 0.76);
+  background: rgba(255, 255, 255, 0.72);
   border-bottom: 1px solid var(--border);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 14px 44px rgba(30, 20, 24, 0.10);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -100,20 +109,19 @@ nav a.logo {
   letter-spacing: 0.2px;
 }
 
-nav a {
-  margin-left: 22px;
-  font-weight: 600;
-  color: rgba(231, 236, 246, 0.86);
-}
-
-nav a:hover {
-  color: var(--link-hover);
-}
-
 .nav-links {
   display: flex;
   align-items: center;
   gap: 14px;
+}
+
+nav a {
+  font-weight: 650;
+  color: rgba(43, 35, 38, 0.78);
+}
+
+nav a:hover {
+  color: rgba(43, 35, 38, 0.96);
 }
 
 /* ==========================================================
@@ -124,35 +132,35 @@ nav a:hover {
   padding: 78px 20px 56px;
 
   background:
-    radial-gradient(850px 320px at 22% 20%, rgba(124, 58, 237, 0.22), transparent 60%),
-    radial-gradient(720px 280px at 78% 30%, rgba(34, 211, 238, 0.16), transparent 55%),
-    linear-gradient(180deg, rgba(11, 18, 32, 0.95), rgba(7, 11, 20, 0.95));
+    radial-gradient(900px 320px at 25% 25%, rgba(255, 202, 212, 0.42), transparent 60%),
+    radial-gradient(860px 300px at 75% 35%, rgba(244, 172, 183, 0.34), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.55));
 
   border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 40px;
-  margin-bottom: 14px;
-  color: var(--ink);
+  font-size: 42px;
   letter-spacing: -0.02em;
+  color: rgba(43, 35, 38, 0.98);
+  margin-bottom: 14px;
 }
 
 .hero .subtitle {
   font-size: 18px;
   color: var(--muted);
-  max-width: 820px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
-/* Optional animated hero variant (works if your index uses hero-animated) */
 .hero-animated {
   position: relative;
   overflow: hidden;
 }
 
-/* CTA buttons (if present) */
 .hero-cta {
   margin-top: 22px;
   display: flex;
@@ -161,12 +169,13 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
+/* Buttons */
 .btn-primary,
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 11px 16px;
   border-radius: 14px;
   font-weight: 800;
   border: 1px solid var(--border);
@@ -175,15 +184,15 @@ nav a:hover {
 }
 
 .btn-primary {
-  color: #0B1220;
-  background: linear-gradient(135deg, rgba(59, 219, 244, 0.95), rgba(167, 139, 250, 0.95));
-  border-color: rgba(34, 211, 238, 0.28);
+  color: #fff;
+  background: linear-gradient(135deg, #c65a72, #9d8189);
+  border-color: rgba(198, 90, 114, 0.30);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(231, 236, 246, 0.92);
-  border-color: rgba(148, 163, 184, 0.18);
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(43, 35, 38, 0.86);
+  border-color: var(--border);
 }
 
 .btn-primary:hover,
@@ -192,31 +201,31 @@ nav a:hover {
   box-shadow: var(--shadow-md);
 }
 
-/* Hero decorative blobs (if your index includes them) */
+/* Hero blobs */
 .hero-blob {
   position: absolute;
   z-index: 1;
   border-radius: 999px;
-  filter: blur(14px);
-  opacity: 0.85;
+  filter: blur(18px);
+  opacity: 0.55;
   animation: floaty 7.5s ease-in-out infinite;
   pointer-events: none;
 }
 
 .hero-blob-1 {
-  width: 360px;
+  width: 380px;
   height: 240px;
-  left: -120px;
+  left: -130px;
   top: 40px;
-  background: radial-gradient(circle at 30% 30%, rgba(124, 58, 237, 0.55), rgba(124, 58, 237, 0.10));
+  background: radial-gradient(circle at 30% 30%, rgba(255, 202, 212, 0.80), rgba(255, 202, 212, 0.10));
 }
 
 .hero-blob-2 {
-  width: 320px;
+  width: 340px;
   height: 220px;
-  right: -110px;
+  right: -120px;
   top: 90px;
-  background: radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.45), rgba(34, 211, 238, 0.08));
+  background: radial-gradient(circle at 30% 30%, rgba(244, 172, 183, 0.70), rgba(244, 172, 183, 0.10));
   animation-delay: 1.2s;
 }
 
@@ -242,339 +251,33 @@ main {
 }
 
 /* ==========================================================
-   Buckets (older bucket layout)
+   Reveal animation helper (used by your homepage script)
    ========================================================== */
-.buckets.vertical {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin-top: 28px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.bucket {
-  padding: 24px;
-  border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .55s ease, transform .55s ease;
 }
 
-.bucket:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-2);
-}
-
-.bucket h2,
-.bucket h3 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-  color: var(--ink);
-}
-
-.bucket p {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 14px;
-}
-
-/* Bucket themes */
-.bucket.work {
-  border-left: 6px solid rgba(34, 211, 238, 0.75);
-  background:
-    radial-gradient(700px 220px at 20% 20%, rgba(34, 211, 238, 0.12), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-}
-
-.bucket.voice {
-  border-left: 6px solid rgba(251, 113, 133, 0.75);
-  background:
-    radial-gradient(700px 220px at 20% 20%, rgba(251, 113, 133, 0.12), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-}
-
-.bucket.life {
-  border-left: 6px solid rgba(167, 139, 250, 0.75);
-  background:
-    radial-gradient(700px 220px at 20% 20%, rgba(167, 139, 250, 0.14), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ==========================================================
-   Story blocks (About sections)
-   ========================================================== */
-.story {
-  max-width: 780px;
-  margin: 0 auto 22px;
-  padding: 26px 20px;
-
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-sm);
-}
-
-.story h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 26px;
-  margin-bottom: 12px;
-  color: var(--ink);
-}
-
-.story p {
-  font-size: 16px;
-  color: rgba(231, 236, 246, 0.90);
-  line-height: 1.85;
-  margin-bottom: 1em;
-}
-
-.story ul {
-  margin: 12px 0 0 18px;
-}
-
-.story li {
-  margin: 10px 0;
-  color: rgba(231, 236, 246, 0.86);
-}
-
-/* ==========================================================
-   Bucket card pages (buckets/work.html etc.)
-   ========================================================== */
-.bucket-card {
-  display: flex;
-  gap: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
-}
-
-.bucket-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--border-2);
-}
-
-.bucket-image {
-  width: 210px;
-  object-fit: cover;
-  filter: saturate(1.05) contrast(1.03);
-}
-
-.bucket-content {
-  padding: 18px 18px 18px 0;
-}
-
-.bucket-content h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 10px;
-  color: var(--ink);
-}
-
-.bucket-content p {
-  font-size: 14px;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-/* ==========================================================
-   Long-form posts (shared across Work/Voice/Life)
-   ========================================================== */
-.post {
-  --accent-1: var(--a1);
-  --accent-2: var(--a2);
-  --accent-3: var(--a3);
-
-  --tint-1: rgba(124, 58, 237, 0.14);
-  --tint-2: rgba(34, 211, 238, 0.12);
-  --tint-3: rgba(251, 113, 133, 0.12);
-
-  --ink-post: var(--ink);
-  --muted-post: var(--muted);
-}
-
-/* Work theme (cyan/violet) */
-.post.post-work {
-  --accent-1: #22D3EE;
-  --accent-2: #A78BFA;
-  --accent-3: #60A5FA;
-
-  --tint-1: rgba(34, 211, 238, 0.14);
-  --tint-2: rgba(167, 139, 250, 0.12);
-  --tint-3: rgba(96, 165, 250, 0.12);
-}
-
-/* Voice theme (rose/amber) */
-.post.post-voice {
-  --accent-1: #FB7185;
-  --accent-2: #F59E0B;
-  --accent-3: #F472B6;
-
-  --tint-1: rgba(251, 113, 133, 0.14);
-  --tint-2: rgba(245, 158, 11, 0.12);
-  --tint-3: rgba(244, 114, 182, 0.12);
-}
-
-/* Life theme (mint/violet) */
-.post.post-life {
-  --accent-1: #34D399;
-  --accent-2: #22D3EE;
-  --accent-3: #A78BFA;
-
-  --tint-1: rgba(52, 211, 153, 0.12);
-  --tint-2: rgba(34, 211, 238, 0.12);
-  --tint-3: rgba(167, 139, 250, 0.12);
-}
-
-.post {
-  max-width: 860px;
-  margin: 56px auto;
-  padding: 26px 22px;
-
-  background:
-    radial-gradient(900px 340px at 20% 10%, var(--tint-1), transparent 62%),
-    radial-gradient(900px 340px at 80% 18%, var(--tint-2), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-
-  color: var(--ink-post);
-  line-height: 1.85;
-
-  animation: fadeIn 0.55s ease-out;
-}
-
-.post h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 3.4vw, 2.8rem);
-  line-height: 1.15;
-  margin: 4px 0 18px;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.post h1::after {
-  content: "";
-  display: block;
-  height: 4px;
-  width: 92px;
-  margin-top: 14px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
-}
-
-.post p {
-  margin: 0 0 18px;
-  font-size: 1.06rem;
-  color: rgba(231, 236, 246, 0.92);
-}
-
-.post p:first-of-type {
-  font-size: 1.14rem;
-  color: var(--muted-post);
-}
-
-.post h2 {
-  margin: 42px 0 14px;
-  font-size: 1.35rem;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-  position: relative;
-  padding-left: 14px;
-}
-
-.post h2::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 6px;
-  height: 20px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--accent-1), var(--accent-2));
-}
-
-.post h2::after {
-  content: "";
-  display: block;
-  height: 1px;
-  margin-top: 14px;
-  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.18), transparent);
-}
-
-.post ul {
-  margin: 18px 0 24px 20px;
-  padding: 0;
-}
-
-.post li {
-  margin: 10px 0;
-  color: rgba(231, 236, 246, 0.88);
-}
-
-.post li::marker {
-  color: var(--accent-2);
-}
-
-/* Inline emphasis */
-.post em {
-  font-style: normal;
-  background: linear-gradient(transparent 58%, rgba(34, 211, 238, 0.22) 58%);
-  padding: 0 3px;
-  border-radius: 3px;
-}
-
-/* Blockquote */
-.post blockquote {
-  margin: 30px 0;
-  padding: 18px 18px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: linear-gradient(135deg, var(--tint-1), var(--tint-2), var(--tint-3));
-  color: rgba(231, 236, 246, 0.95);
-  font-size: 1.05rem;
-  position: relative;
-}
-
-.post blockquote::before {
-  content: "“";
-  position: absolute;
-  top: -14px;
-  left: 14px;
-  font-size: 3rem;
-  color: rgba(231, 236, 246, 0.25);
-}
-
-/* Images in posts */
-.post img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 22px 0 28px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  filter: saturate(1.05) contrast(1.03);
-}
-
-/* Links inside posts */
-.post a {
-  color: var(--accent-1);
-  border-bottom: 1px dashed rgba(231, 236, 246, 0.20);
-}
-
-.post a:hover {
-  border-bottom-style: solid;
-}
-
-/* ==========================================================
-   Resources / Packs UI (home + resources pages)
+   Section headers + icons
    ========================================================== */
 .home-section {
   margin: 10px 0 28px;
@@ -590,10 +293,10 @@ main {
   align-items: center;
   gap: 10px;
   font-family: 'Playfair Display', serif;
-  font-size: 28px;
+  font-size: 30px;
   letter-spacing: -0.01em;
   margin-bottom: 10px;
-  color: var(--ink);
+  color: rgba(43, 35, 38, 0.98);
 }
 
 .section-icon {
@@ -603,12 +306,11 @@ main {
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.70);
   border: 1px solid var(--border);
-  color: rgba(231, 236, 246, 0.88);
+  color: rgba(43, 35, 38, 0.82);
   box-shadow: var(--shadow-sm);
   flex: 0 0 38px;
-  /* prevents shrink on small screens */
 }
 
 .section-icon svg {
@@ -621,18 +323,24 @@ main {
   color: var(--muted);
 }
 
-/* Content cards (resources page sections) */
+.soft-note {
+  color: var(--muted);
+}
+
+/* ==========================================================
+   Content cards
+   ========================================================== */
 .content-card {
   padding: 22px;
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
 }
 
 .content-card h2 {
   font-family: 'Playfair Display', serif;
-  color: var(--ink);
+  color: rgba(43, 35, 38, 0.98);
   margin-bottom: 10px;
 }
 
@@ -641,7 +349,9 @@ main {
   margin-bottom: 14px;
 }
 
-/* Pack grid */
+/* ==========================================================
+   Packs grid (Project Library, PM Tools, Stories, Start Here)
+   ========================================================== */
 .pack-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -649,7 +359,6 @@ main {
   margin-top: 14px;
 }
 
-/* Pack tile */
 .pack-tile {
   display: block;
   position: relative;
@@ -661,8 +370,8 @@ main {
   box-shadow: var(--shadow-sm);
 
   background:
-    radial-gradient(900px 260px at 20% 10%, rgba(34, 211, 238, 0.12), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+    radial-gradient(900px 260px at 20% 10%, rgba(255, 202, 212, 0.40), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.70));
 
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
@@ -673,15 +382,12 @@ main {
   border-color: var(--border-2);
 }
 
-/* Subtle shine on hover */
+/* subtle shine on hover */
 .pack-tile::before {
   content: "";
   position: absolute;
   inset: -2px;
-  background: linear-gradient(120deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.22) 18%,
-      transparent 36%);
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.75) 18%, transparent 36%);
   transform: translateX(-120%);
   transition: transform .55s ease;
   pointer-events: none;
@@ -701,7 +407,7 @@ main {
 .pack-title {
   font-family: 'Playfair Display', serif;
   font-size: 18px;
-  color: var(--ink);
+  color: rgba(43, 35, 38, 0.98);
   line-height: 1.25;
 }
 
@@ -710,9 +416,9 @@ main {
   align-items: center;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(34, 211, 238, 0.22);
-  background: rgba(34, 211, 238, 0.10);
-  color: rgba(231, 236, 246, 0.92);
+  border: 1px solid rgba(198, 90, 114, 0.22);
+  background: rgba(244, 172, 183, 0.28);
+  color: rgba(43, 35, 38, 0.86);
   font-weight: 800;
   font-size: 12px;
   white-space: nowrap;
@@ -729,31 +435,32 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgba(231, 236, 246, 0.82);
+  color: rgba(43, 35, 38, 0.78);
   font-weight: 800;
 }
 
 .pack-kicker {
-  color: rgba(231, 236, 246, 0.86);
+  color: rgba(43, 35, 38, 0.82);
 }
 
 .pack-arrow {
-  color: var(--link-hover);
+  color: var(--link);
 }
 
-/* Muted tiles (in progress) */
+/* muted tiles (coming soon / in progress) */
 .pack-tile-muted {
-  opacity: 0.7;
-  filter: saturate(0.9);
+  opacity: 0.75;
+  filter: saturate(0.95);
 }
 
 .pack-chip-muted {
-  background: rgba(148, 163, 184, 0.12);
-  border-color: rgba(148, 163, 184, 0.18);
+  background: rgba(157, 129, 137, 0.10);
+  border-color: rgba(157, 129, 137, 0.20);
+  color: rgba(43, 35, 38, 0.70);
 }
 
 .pack-footer-muted {
-  color: rgba(231, 236, 246, 0.62);
+  color: rgba(43, 35, 38, 0.58);
 }
 
 /* Inline CTA */
@@ -763,84 +470,75 @@ main {
   padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(231, 236, 246, 0.90);
+  background: rgba(255, 255, 255, 0.78);
+  color: rgba(43, 35, 38, 0.88);
   font-weight: 800;
   box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
 }
 
 .inline-cta:hover {
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--link-hover);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-md);
+  color: rgba(43, 35, 38, 0.98);
 }
 
-.soft-note {
-  color: var(--muted);
-}
-
-/* Home section differentiation */
-.home-section--resources .section-title {
-  color: rgba(231, 236, 246, 0.96);
-}
-
+/* ==========================================================
+   Home section identity (Resources / Stories / PM Tools)
+   ========================================================== */
 .home-section--resources .section-icon {
-  border-color: rgba(34, 211, 238, 0.28);
-  background: rgba(34, 211, 238, 0.10);
+  border-color: rgba(157, 129, 137, 0.24);
+  background: rgba(255, 255, 255, 0.72);
 }
 
 .home-section--stories {
   margin-top: 26px;
   padding-top: 26px;
-  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  border-top: 1px solid rgba(157, 129, 137, 0.18);
 }
 
 .home-section--stories .section-icon {
-  border-color: rgba(251, 113, 133, 0.28);
-  background: rgba(251, 113, 133, 0.10);
+  border-color: rgba(198, 90, 114, 0.22);
+  background: rgba(244, 172, 183, 0.20);
 }
 
-/* Optional: subtle section tint behind each grid */
-.home-section--resources .pack-grid .pack-tile {
+.home-section--pmtools {
+  margin-top: 42px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(157, 129, 137, 0.18);
   background:
-    radial-gradient(900px 260px at 20% 10%, rgba(34, 211, 238, 0.14), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+    radial-gradient(900px 280px at 15% 0%, rgba(157, 129, 137, 0.10), transparent 60%),
+    radial-gradient(900px 280px at 85% 0%, rgba(244, 172, 183, 0.18), transparent 60%);
 }
 
-.home-section--stories .pack-grid .pack-tile {
+.home-section--pmtools .section-icon {
+  border-color: rgba(157, 129, 137, 0.26);
+  background: rgba(255, 202, 212, 0.22);
+}
+
+.home-section--pmtools .pack-tile {
   background:
-    radial-gradient(900px 260px at 20% 10%, rgba(251, 113, 133, 0.12), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
+    radial-gradient(900px 260px at 20% 10%, rgba(157, 129, 137, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.70));
+}
+
+.home-section--pmtools .pack-tile:hover {
+  border-color: rgba(157, 129, 137, 0.34);
+  box-shadow: var(--shadow-md);
+}
+
+.home-section--pmtools::after {
+  content: "";
+  display: block;
+  margin-top: 46px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(157, 129, 137, 0.22), transparent);
 }
 
 /* ==========================================================
-   Resources helpers: disclaimer box, tags, tables, RAG pills
+   Tags row
    ========================================================== */
-.disclaimer-box {
-  margin: 18px 0 22px;
-  padding: 16px 16px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(34, 211, 238, 0.10));
-  box-shadow: var(--shadow-sm);
-}
-
-.disclaimer-box h2 {
-  font-family: 'Playfair Display', serif;
-  margin: 0 0 10px;
-  color: var(--ink);
-  font-size: 18px;
-}
-
-.disclaimer-box ul {
-  margin: 0 0 0 18px;
-}
-
-.disclaimer-box li {
-  margin: 8px 0;
-  color: rgba(231, 236, 246, 0.88);
-}
-
-/* Tags row */
 .tags-row {
   display: flex;
   flex-wrap: wrap;
@@ -854,46 +552,441 @@ main {
   padding: 7px 12px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(231, 236, 246, 0.92);
+  background: rgba(255, 255, 255, 0.66);
+  color: rgba(43, 35, 38, 0.84);
   font-weight: 800;
   font-size: 12.5px;
   letter-spacing: 0.2px;
 }
 
 .tag-work {
-  background: rgba(34, 211, 238, 0.12);
-  border-color: rgba(34, 211, 238, 0.22);
+  background: rgba(255, 229, 217, 0.80);
+  border-color: rgba(157, 129, 137, 0.22);
 }
 
 .tag-pm {
-  background: rgba(167, 139, 250, 0.12);
-  border-color: rgba(167, 139, 250, 0.22);
+  background: rgba(244, 172, 183, 0.34);
+  border-color: rgba(198, 90, 114, 0.22);
 }
 
 .tag-digital {
-  background: rgba(124, 58, 237, 0.12);
-  border-color: rgba(124, 58, 237, 0.22);
+  background: rgba(255, 202, 212, 0.42);
+  border-color: rgba(198, 90, 114, 0.20);
 }
 
 .tag-hybrid {
-  background: rgba(245, 158, 11, 0.14);
-  border-color: rgba(245, 158, 11, 0.26);
+  background: rgba(216, 226, 220, 0.70);
+  border-color: rgba(157, 129, 137, 0.22);
 }
 
-/* Table wrapper for horizontal scroll on mobile */
+/* ==========================================================
+   Series Badge (Animated)
+   ========================================================== */
+.series-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+  line-height: 1;
+
+  color: rgba(43, 35, 38, 0.86);
+
+  background: rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(157, 129, 137, 0.26);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  box-shadow: 0 10px 22px rgba(30, 20, 24, 0.10);
+}
+
+.series-badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, rgba(198, 90, 114, 0.95), rgba(157, 129, 137, 0.85));
+  box-shadow: 0 0 0 3px rgba(244, 172, 183, 0.35);
+}
+
+.series-badge::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.70) 18%, transparent 36%);
+  transform: translateX(-120%);
+  animation: seriesShimmer 3.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.85;
+}
+
+@keyframes seriesShimmer {
+  0% {
+    transform: translateX(-140%);
+  }
+
+  55% {
+    transform: translateX(140%);
+  }
+
+  100% {
+    transform: translateX(140%);
+  }
+}
+
+.series-badge--tight {
+  margin-left: 10px;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================
+   Buckets (older bucket layout)
+   ========================================================== */
+.buckets.vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.bucket {
+  padding: 24px;
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.bucket:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-2);
+}
+
+.bucket h2,
+.bucket h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  color: rgba(43, 35, 38, 0.98);
+}
+
+.bucket p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+/* Bucket themes (subtle left border) */
+.bucket.work {
+  border-left: 6px solid rgba(198, 90, 114, 0.55);
+}
+
+.bucket.voice {
+  border-left: 6px solid rgba(157, 129, 137, 0.55);
+}
+
+.bucket.life {
+  border-left: 6px solid rgba(244, 172, 183, 0.65);
+}
+
+/* ==========================================================
+   Bucket card pages (buckets/work.html etc.)
+   ========================================================== */
+.bucket-card {
+  display: flex;
+  gap: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.bucket-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-2);
+}
+
+.bucket-image {
+  width: 210px;
+  object-fit: cover;
+  border-right: 1px solid rgba(157, 129, 137, 0.14);
+}
+
+.bucket-content {
+  padding: 18px 18px 18px 0;
+}
+
+.bucket-content h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+  color: rgba(43, 35, 38, 0.98);
+}
+
+.bucket-content p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+/* Series card differentiation inside Work */
+.bucket-card--series {
+  position: relative;
+  border-color: rgba(157, 129, 137, 0.30);
+  background:
+    radial-gradient(900px 260px at 15% 10%, rgba(157, 129, 137, 0.12), transparent 60%),
+    radial-gradient(900px 260px at 85% 20%, rgba(244, 172, 183, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.70));
+}
+
+.bucket-card--series::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 10px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(198, 90, 114, 0.70), rgba(157, 129, 137, 0.70), rgba(244, 172, 183, 0.55));
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.bucket-card--series:hover {
+  border-color: rgba(157, 129, 137, 0.40);
+  box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================
+   Story blocks (About-like sections)
+   ========================================================== */
+.story {
+  max-width: 780px;
+  margin: 0 auto 22px;
+  padding: 26px 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.story h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: rgba(43, 35, 38, 0.98);
+}
+
+.story p {
+  font-size: 16px;
+  color: rgba(43, 35, 38, 0.90);
+  line-height: 1.9;
+  margin-bottom: 1em;
+}
+
+.story ul {
+  margin: 12px 0 0 18px;
+}
+
+.story li {
+  margin: 10px 0;
+  color: rgba(43, 35, 38, 0.86);
+}
+
+/* ==========================================================
+   Long-form posts (reading-first)
+   ========================================================== */
+.post {
+  max-width: 860px;
+  margin: 56px auto;
+  padding: 26px 22px;
+
+  background:
+    radial-gradient(900px 340px at 20% 10%, rgba(255, 202, 212, 0.28), transparent 62%),
+    radial-gradient(900px 340px at 80% 18%, rgba(244, 172, 183, 0.22), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.76));
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  line-height: 1.9;
+
+  animation: fadeIn 0.55s ease-out;
+}
+
+/* Theme hook classes (kept for compatibility) */
+.post-work,
+.post-voice,
+.post-life {}
+
+/* Headings */
+.post h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.4vw, 2.8rem);
+  line-height: 1.15;
+  margin: 4px 0 18px;
+  letter-spacing: -0.02em;
+  color: rgba(43, 35, 38, 0.98);
+}
+
+.post h1::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 92px;
+  margin-top: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c65a72, #9d8189, #f4acb7);
+  box-shadow: 0 12px 26px rgba(30, 20, 24, 0.10);
+}
+
+.post p {
+  margin: 0 0 18px;
+  font-size: 1.06rem;
+  color: rgba(43, 35, 38, 0.92);
+}
+
+.post p:first-of-type {
+  color: var(--muted);
+}
+
+.post h2 {
+  margin: 42px 0 14px;
+  font-size: 1.35rem;
+  color: rgba(43, 35, 38, 0.98);
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-left: 14px;
+}
+
+.post h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 6px;
+  height: 20px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #c65a72, #9d8189);
+}
+
+.post h2::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, transparent, rgba(157, 129, 137, 0.22), transparent);
+}
+
+/* Lists */
+.post ul {
+  margin: 18px 0 24px 20px;
+  padding: 0;
+}
+
+.post li {
+  margin: 10px 0;
+  color: rgba(43, 35, 38, 0.88);
+}
+
+.post li::marker {
+  color: #c65a72;
+}
+
+/* Inline emphasis (soft highlight) */
+.post em {
+  font-style: normal;
+  background: linear-gradient(transparent 60%, rgba(244, 172, 183, 0.38) 60%);
+  padding: 0 3px;
+  border-radius: 3px;
+}
+
+/* Blockquote */
+.post blockquote {
+  margin: 30px 0;
+  padding: 18px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(157, 129, 137, 0.22);
+  background: linear-gradient(135deg, rgba(255, 229, 217, 0.90), rgba(255, 202, 212, 0.64), rgba(244, 172, 183, 0.56));
+  color: rgba(43, 35, 38, 0.92);
+  font-size: 1.05rem;
+  position: relative;
+}
+
+.post blockquote::before {
+  content: "“";
+  position: absolute;
+  top: -14px;
+  left: 14px;
+  font-size: 3rem;
+  color: rgba(157, 129, 137, 0.28);
+}
+
+/* Images */
+.post img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 22px 0 28px;
+  border-radius: 16px;
+  border: 1px solid rgba(157, 129, 137, 0.18);
+  box-shadow: var(--shadow-md);
+}
+
+/* Links inside posts */
+.post a {
+  color: var(--link);
+  border-bottom: 1px dashed rgba(157, 129, 137, 0.32);
+}
+
+.post a:hover {
+  border-bottom-style: solid;
+}
+
+/* Disclaimer box */
+.disclaimer-box {
+  margin: 18px 0 22px;
+  padding: 16px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(157, 129, 137, 0.22);
+  background: linear-gradient(135deg, rgba(255, 229, 217, 0.92), rgba(216, 226, 220, 0.72));
+  box-shadow: var(--shadow-sm);
+}
+
+.disclaimer-box h2 {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 10px;
+  color: rgba(43, 35, 38, 0.98);
+  font-size: 18px;
+}
+
+.disclaimer-box p {
+  color: rgba(43, 35, 38, 0.86);
+}
+
+/* ==========================================================
+   Tables + wrappers
+   ========================================================== */
 .table-wrap {
   width: 100%;
   overflow-x: auto;
   border-radius: 14px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(157, 129, 137, 0.22);
+  background: rgba(255, 255, 255, 0.70);
   box-shadow: var(--shadow-sm);
 }
 
-/* Tables inside posts/resources */
-.post table,
-.content-card table,
 table {
   width: 100%;
   border-collapse: collapse;
@@ -902,40 +995,62 @@ table {
   overflow: hidden;
 }
 
-.post th,
-.post td,
-.content-card th,
-.content-card td,
 th,
 td {
   text-align: left;
   padding: 12px 12px;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+  border-bottom: 1px solid rgba(157, 129, 137, 0.16);
   vertical-align: top;
 }
 
-.post th,
-.content-card th,
 th {
   font-weight: 900;
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(231, 236, 246, 0.92);
+  background: rgba(255, 255, 255, 0.90);
+  color: rgba(43, 35, 38, 0.92);
 }
 
-.post td,
-.content-card td,
 td {
-  color: rgba(231, 236, 246, 0.86);
-  background: rgba(255, 255, 255, 0.03);
+  color: rgba(43, 35, 38, 0.86);
+  background: rgba(255, 255, 255, 0.76);
 }
 
-.post tr:hover td,
-.content-card tr:hover td,
 tr:hover td {
-  background: rgba(34, 211, 238, 0.06);
+  background: rgba(255, 202, 212, 0.18);
 }
 
-/* RAG pills (for risk tables) */
+/* ==========================================================
+   Risk Register enhancements (pills + sticky header)
+   ========================================================== */
+.score-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 1;
+  border: 1px solid rgba(157, 129, 137, 0.22);
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(43, 35, 38, 0.86);
+}
+
+.score-green {
+  background: rgba(216, 226, 220, 0.80);
+  border-color: rgba(157, 129, 137, 0.22);
+}
+
+.score-amber {
+  background: rgba(255, 229, 217, 0.90);
+  border-color: rgba(157, 129, 137, 0.22);
+}
+
+.score-red {
+  background: rgba(244, 172, 183, 0.34);
+  border-color: rgba(198, 90, 114, 0.22);
+}
+
 .rag-pill {
   display: inline-flex;
   align-items: center;
@@ -943,162 +1058,75 @@ tr:hover td {
   border-radius: 999px;
   font-weight: 900;
   font-size: 12px;
-  border: 1px solid var(--border);
-  color: rgba(231, 236, 246, 0.92);
+  border: 1px solid rgba(157, 129, 137, 0.22);
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(43, 35, 38, 0.86);
 }
 
 .rag-green {
-  background: rgba(52, 211, 153, 0.18);
-  border-color: rgba(52, 211, 153, 0.28);
+  background: rgba(216, 226, 220, 0.80);
 }
 
 .rag-amber {
-  background: rgba(245, 158, 11, 0.18);
-  border-color: rgba(245, 158, 11, 0.28);
+  background: rgba(255, 229, 217, 0.90);
 }
 
 .rag-red {
-  background: rgba(251, 113, 133, 0.18);
-  border-color: rgba(251, 113, 133, 0.28);
+  background: rgba(244, 172, 183, 0.34);
+  border-color: rgba(198, 90, 114, 0.22);
 }
 
-/* ==========================================================
-   Animations / Accessibility
-   ========================================================== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.table-wrap table.risk-table {
+  min-width: 1400px;
 }
 
-/* Scroll reveal helpers (if used) */
-.reveal {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity .55s ease, transform .55s ease;
+.table-wrap table.risk-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
 }
 
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Optional sticky columns for risk tables */
+@media (min-width: 900px) {
 
-/* Reduced motion respect */
-@media (prefers-reduced-motion: reduce) {
-  .hero-blob {
-    animation: none !important;
+  .table-wrap table.risk-table th.sticky-col,
+  .table-wrap table.risk-table td.sticky-col {
+    position: sticky;
+    left: 0;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.86);
   }
 
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .pack-tile::before {
-    display: none !important;
-  }
-
-  .btn-primary,
-  .btn-secondary {
-    transition: none !important;
+  .table-wrap table.risk-table th.sticky-col-2,
+  .table-wrap table.risk-table td.sticky-col-2 {
+    position: sticky;
+    left: 70px;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.86);
   }
 }
 
 /* ==========================================================
-   Footer
-   ========================================================== */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 34px;
-  font-size: 14px;
-  color: rgba(231, 236, 246, 0.60);
-  border-top: 1px solid var(--border);
-  background: rgba(11, 18, 32, 0.55);
-}
-
-/* ==========================================================
-   Responsive
-   ========================================================== */
-@media (max-width: 980px) {
-  .pack-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px 16px;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .bucket-card {
-    flex-direction: column;
-  }
-
-  .bucket-image {
-    width: 100%;
-    height: 190px;
-  }
-
-  .bucket-content {
-    padding: 16px;
-  }
-}
-
-@media (max-width: 640px) {
-  main {
-    padding: 28px 12px 42px;
-  }
-
-  .pack-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .post {
-    margin: 34px 10px;
-    padding: 18px 16px;
-    border-radius: 16px;
-  }
-
-  .post h2 {
-    margin-top: 34px;
-  }
-}
-
-/* ==========================================================
-   ABOUT PAGE (Restored & Dark Optimised)
-   Matches structure in about.html
+   About Page (light, executive, readable)
    ========================================================== */
 .about-hero {
   margin-top: 40px;
 }
 
-/* Main card */
 .about-hero-card {
   background:
-    radial-gradient(900px 280px at 15% 10%, rgba(124, 58, 237, 0.18), transparent 60%),
-    radial-gradient(900px 280px at 85% 20%, rgba(34, 211, 238, 0.14), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(148, 163, 184, 0.18);
+    radial-gradient(900px 280px at 15% 10%, rgba(255, 202, 212, 0.22), transparent 60%),
+    radial-gradient(900px 280px at 85% 20%, rgba(244, 172, 183, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.74));
+  border: 1px solid rgba(157, 129, 137, 0.22);
   border-radius: 22px;
   padding: 36px;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  box-shadow: var(--shadow-lg);
 }
 
-/* Top section layout */
+/* layout */
 .about-top {
   display: flex;
   gap: 40px;
@@ -1106,7 +1134,7 @@ footer {
   margin-bottom: 36px;
 }
 
-/* Photo */
+/* photo */
 .about-hero-left {
   position: relative;
 }
@@ -1115,9 +1143,9 @@ footer {
   position: absolute;
   inset: -8px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7C3AED, #22D3EE);
-  filter: blur(12px);
-  opacity: 0.6;
+  background: linear-gradient(135deg, rgba(198, 90, 114, 0.45), rgba(157, 129, 137, 0.45));
+  filter: blur(14px);
+  opacity: 0.55;
   z-index: 0;
 }
 
@@ -1127,12 +1155,12 @@ footer {
   height: 180px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border: 4px solid rgba(157, 129, 137, 0.16);
+  box-shadow: var(--shadow-md);
   z-index: 1;
 }
 
-/* Bubbles */
+/* bubbles */
 .about-bubbles {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -1162,16 +1190,16 @@ footer {
   border-radius: 16px;
   min-width: 150px;
 
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(157, 129, 137, 0.22);
 
   backdrop-filter: blur(6px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-sm);
 
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-/* gradient outline layer */
+/* animated gradient outline */
 .about-bubble::before {
   content: "";
   position: absolute;
@@ -1180,17 +1208,16 @@ footer {
   padding: 1px;
 
   background: linear-gradient(120deg,
-      rgba(34, 211, 238, 0.85),
-      rgba(167, 139, 250, 0.85),
-      rgba(251, 113, 133, 0.65),
-      rgba(34, 211, 238, 0.85));
+      rgba(198, 90, 114, 0.55),
+      rgba(157, 129, 137, 0.55),
+      rgba(244, 172, 183, 0.55),
+      rgba(198, 90, 114, 0.55));
   background-size: 300% 300%;
   animation: bubbleGlow 6s ease-in-out infinite;
 
   z-index: -1;
-  opacity: 0.65;
+  opacity: 0.70;
 
-  /* make it an outline only */
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -1201,39 +1228,35 @@ footer {
   mask-composite: exclude;
 }
 
-/* subtle inner highlight */
 .about-bubble::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: radial-gradient(500px 160px at 20% 10%, rgba(255, 255, 255, 0.08), transparent 55%);
+  background: radial-gradient(500px 160px at 20% 10%, rgba(255, 255, 255, 0.75), transparent 55%);
   z-index: -1;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .about-bubble:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55);
-}
-
-.about-bubble:hover::before {
-  opacity: 0.9;
+  box-shadow: var(--shadow-md);
+  border-color: rgba(157, 129, 137, 0.30);
 }
 
 .bubble-title {
-  font-weight: 800;
+  font-weight: 850;
   font-size: 14px;
-  color: #E7ECF6;
+  color: rgba(43, 35, 38, 0.96);
 }
 
 .bubble-sub {
   font-size: 12px;
-  color: rgba(231, 236, 246, 0.65);
+  color: rgba(43, 35, 38, 0.62);
   margin-top: 4px;
 }
 
-/* Text section */
+/* right content */
 .about-hero-right {
   margin-top: 10px;
 }
@@ -1242,55 +1265,52 @@ footer {
   font-family: 'Playfair Display', serif;
   font-size: 32px;
   margin-bottom: 8px;
-  color: #E7ECF6;
+  color: rgba(43, 35, 38, 0.98);
 }
 
 .about-role {
   font-size: 14px;
-  font-weight: 600;
-  color: rgba(231, 236, 246, 0.65);
+  font-weight: 650;
+  color: rgba(43, 35, 38, 0.62);
   margin-bottom: 16px;
 }
 
-/* Contact row */
 .about-contact {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   font-size: 13px;
   margin-bottom: 18px;
-  color: rgba(231, 236, 246, 0.70);
+  color: rgba(43, 35, 38, 0.62);
 }
 
 .about-contact-link {
-  color: #22D3EE;
-  font-weight: 600;
+  color: var(--link);
+  font-weight: 650;
 }
 
 .about-contact-link:hover {
-  color: #A78BFA;
+  color: var(--link-hover);
 }
 
 .about-contact-sep {
-  opacity: 0.5;
+  opacity: 0.55;
 }
 
-/* Lead paragraph */
 .about-lead {
   font-size: 18px;
-  font-weight: 600;
-  color: rgba(231, 236, 246, 0.90);
+  font-weight: 650;
+  color: rgba(43, 35, 38, 0.90);
   margin-bottom: 20px;
 }
 
-/* Body copy */
 .about-copy p {
   margin-bottom: 16px;
-  color: rgba(231, 236, 246, 0.88);
-  line-height: 1.8;
+  color: rgba(43, 35, 38, 0.82);
+  line-height: 1.85;
 }
 
-/* Highlight pills */
+/* highlight pills */
 .about-highlights {
   display: flex;
   flex-wrap: wrap;
@@ -1301,14 +1321,14 @@ footer {
 .about-pill {
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(124, 58, 237, 0.16);
-  border: 1px solid rgba(124, 58, 237, 0.25);
+  background: rgba(255, 229, 217, 0.88);
+  border: 1px solid rgba(157, 129, 137, 0.22);
   font-size: 12px;
-  font-weight: 700;
-  color: #E7ECF6;
+  font-weight: 750;
+  color: rgba(43, 35, 38, 0.88);
 }
 
-/* Credentials (final “tight + structured” values preserved) */
+/* credentials */
 .about-credentials {
   margin-top: 38px;
   display: grid;
@@ -1317,16 +1337,15 @@ footer {
 }
 
 .about-credential-block {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.74));
+  border: 1px solid rgba(157, 129, 137, 0.22);
   border-radius: 18px;
   padding: 18px 18px;
-  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.52);
+  box-shadow: var(--shadow-md);
   position: relative;
   overflow: hidden;
 }
 
-/* subtle executive accent bar */
 .about-credential-block::before {
   content: "";
   position: absolute;
@@ -1334,27 +1353,19 @@ footer {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, rgba(34, 211, 238, 0.85), rgba(167, 139, 250, 0.85), rgba(251, 113, 133, 0.70));
+  background: linear-gradient(90deg, rgba(198, 90, 114, 0.70), rgba(157, 129, 137, 0.70), rgba(244, 172, 183, 0.60));
   opacity: 0.9;
 }
 
-/* heading row */
 .about-credential-block h3 {
   font-family: 'Playfair Display', serif;
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-size: 16px;
-  letter-spacing: 0.2px;
   margin-bottom: 14px;
-  color: rgba(231, 236, 246, 0.96);
-
+  color: rgba(43, 35, 38, 0.96);
   position: relative;
   padding-left: 38px;
-  /* space for icon badge */
 }
 
-/* icon container */
 .about-credential-block h3::before {
   content: "";
   position: absolute;
@@ -1364,67 +1375,19 @@ footer {
   width: 26px;
   height: 26px;
   border-radius: 8px;
-
-  background: radial-gradient(circle at 30% 30%, rgba(34, 211, 238, 0.9), rgba(124, 58, 237, 0.9));
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  background: radial-gradient(circle at 30% 30%, rgba(244, 172, 183, 0.70), rgba(157, 129, 137, 0.65));
+  box-shadow: 0 8px 22px rgba(30, 20, 24, 0.12);
 }
 
-/* divider line (note: overridden for first two blocks by nth-child ::after glyph below — preserved behaviour) */
 .about-credential-block h3::after {
   content: "";
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(148, 163, 184, 0.22), transparent);
-  margin-left: 10px;
-}
-
-/* each item becomes a clean “row” */
-.credential-item {
-  padding: 12px 12px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(148, 163, 184, 0.14);
-  margin-bottom: 12px;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
-}
-
-.credential-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(34, 211, 238, 0.22);
-  background: rgba(34, 211, 238, 0.06);
-}
-
-.credential-title {
-  font-weight: 800;
-  font-size: 13.5px;
-  color: rgba(231, 236, 246, 0.96);
-  line-height: 1.35;
-}
-
-.credential-meta {
-  margin-top: 4px;
-  font-size: 12px;
-  color: rgba(231, 236, 246, 0.62);
-}
-
-/* icon glyph inside badge (preserve original behaviour) */
-.about-credential-block:nth-child(1) h3::after,
-.about-credential-block:nth-child(2) h3::after {
   position: absolute;
   left: 6px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 14px;
-  color: #070B14;
   font-weight: 900;
-
-  /* overrides divider line content on first two blocks */
-  content: "";
-  width: auto;
-  height: auto;
-  background: none;
-  margin: 0;
-  flex: none;
+  color: rgba(43, 35, 38, 0.92);
 }
 
 .about-credential-block:nth-child(1) h3::after {
@@ -1437,7 +1400,35 @@ footer {
   letter-spacing: -1px;
 }
 
-/* Secondary structured section */
+.credential-item {
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(157, 129, 137, 0.18);
+  margin-bottom: 12px;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.credential-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(198, 90, 114, 0.22);
+  background: rgba(255, 202, 212, 0.20);
+}
+
+.credential-title {
+  font-weight: 850;
+  font-size: 13.5px;
+  color: rgba(43, 35, 38, 0.94);
+  line-height: 1.35;
+}
+
+.credential-meta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(43, 35, 38, 0.62);
+}
+
+/* secondary sections */
 .about-sections {
   margin-top: 60px;
   display: grid;
@@ -1448,24 +1439,45 @@ footer {
 .about-section {
   padding: 22px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(157, 129, 137, 0.20);
+  box-shadow: var(--shadow-sm);
 }
 
 .about-section h3 {
   font-family: 'Playfair Display', serif;
   margin-bottom: 10px;
   font-size: 16px;
-  color: #E7ECF6;
+  color: rgba(43, 35, 38, 0.96);
 }
 
 .about-section p {
   font-size: 14px;
-  color: rgba(231, 236, 246, 0.75);
+  color: rgba(43, 35, 38, 0.70);
 }
 
-/* About responsive */
+/* ==========================================================
+   Footer
+   ========================================================== */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 34px;
+  font-size: 14px;
+  color: rgba(43, 35, 38, 0.62);
+  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 980px) {
+  .pack-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 900px) {
   .about-top {
     flex-direction: column;
@@ -1485,541 +1497,84 @@ footer {
   .about-sections {
     grid-template-columns: 1fr;
   }
+}
 
-  .about-credential-block {
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .bucket-card {
+    flex-direction: column;
+  }
+
+  .bucket-image {
+    width: 100%;
+    height: 190px;
+    border-right: none;
+    border-bottom: 1px solid rgba(157, 129, 137, 0.14);
+  }
+
+  .bucket-content {
     padding: 16px;
   }
+}
 
-  .credential-item {
-    padding: 11px 11px;
+@media (max-width: 640px) {
+  main {
+    padding: 28px 12px 42px;
+  }
+
+  .pack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .post {
+    margin: 34px 10px;
+    padding: 18px 16px;
+    border-radius: 16px;
+  }
+
+  .post h2 {
+    margin-top: 34px;
   }
 }
 
-/* Reduce motion preference for bubble outline */
+/* ==========================================================
+   Reduced motion
+   ========================================================== */
 @media (prefers-reduced-motion: reduce) {
-  .about-bubble::before {
+  .hero-blob {
     animation: none !important;
   }
-}
 
-/* ==========================================================
-   Risk Register Enhancements: score pills + sticky headers
-   ========================================================== */
-.score-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 38px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-weight: 900;
-  font-size: 12px;
-  line-height: 1;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(231, 236, 246, 0.92);
-}
-
-.score-green {
-  background: rgba(52, 211, 153, 0.16);
-  border-color: rgba(52, 211, 153, 0.28);
-}
-
-.score-amber {
-  background: rgba(245, 158, 11, 0.16);
-  border-color: rgba(245, 158, 11, 0.28);
-}
-
-.score-red {
-  background: rgba(251, 113, 133, 0.16);
-  border-color: rgba(251, 113, 133, 0.28);
-}
-
-/* Risk table readability improvements */
-.table-wrap table.risk-table {
-  min-width: 1400px;
-  /* ensures columns don't crush */
-}
-
-/* Sticky header inside scroll wrapper */
-.table-wrap table.risk-table thead th {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(6px);
-}
-
-/* Optional: make first 2 columns sticky for large risk tables */
-@media (min-width: 900px) {
-
-  .table-wrap table.risk-table th.sticky-col,
-  .table-wrap table.risk-table td.sticky-col {
-    position: sticky;
-    left: 0;
-    z-index: 4;
-    background: rgba(255, 255, 255, 0.05);
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 
-  .table-wrap table.risk-table th.sticky-col-2,
-  .table-wrap table.risk-table td.sticky-col-2 {
-    position: sticky;
-    left: 70px;
-    /* approximate width of ID col */
-    z-index: 4;
-    background: rgba(255, 255, 255, 0.05);
-  }
-}
-
-/* ==========================================================
-   Series Badge (Animated) — for highlighting series content
-   Usage: <span class="series-badge">Series</span>
-   ========================================================== */
-.series-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 6px 10px;
-  border-radius: 999px;
-
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.3px;
-  line-height: 1;
-
-  color: rgba(231, 236, 246, 0.92);
-
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(148, 163, 184, 0.18);
-
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(34, 211, 238, 0.10);
-
-  transform: translateZ(0);
-}
-
-/* dot */
-.series-badge::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-
-  background: radial-gradient(circle at 35% 35%,
-      rgba(34, 211, 238, 0.95),
-      rgba(124, 58, 237, 0.85));
-
-  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.10);
-}
-
-/* shimmer */
-.series-badge::after {
-  content: "";
-  position: absolute;
-  inset: -2px;
-
-  background: linear-gradient(120deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.20) 18%,
-      transparent 36%);
-
-  transform: translateX(-120%);
-  animation: seriesShimmer 3.8s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.75;
-}
-
-@keyframes seriesShimmer {
-  0% {
-    transform: translateX(-140%);
+  .pack-tile::before {
+    display: none !important;
   }
 
-  55% {
-    transform: translateX(140%);
+  .btn-primary,
+  .btn-secondary {
+    transition: none !important;
   }
 
-  100% {
-    transform: translateX(140%);
-  }
-}
-
-.series-badge--tight {
-  margin-left: 10px;
-  transform: translateY(-2px);
-}
-
-@media (prefers-reduced-motion: reduce) {
   .series-badge::after {
     animation: none !important;
     display: none;
   }
-}
 
-/* ==========================================================
-   Home Section — PM Tools Identity
-   ========================================================== */
-
-.home-section--pmtools {
-  margin-top: 42px;
-  padding-top: 36px;
-  border-top: 1px solid rgba(148, 163, 184, 0.14);
-
-  /* subtle violet-teal wash */
-  background:
-    radial-gradient(900px 280px at 15% 0%, rgba(167, 139, 250, 0.10), transparent 60%),
-    radial-gradient(900px 280px at 85% 0%, rgba(34, 211, 238, 0.08), transparent 60%);
-}
-
-/* Section icon tint */
-.home-section--pmtools .section-icon {
-  border-color: rgba(167, 139, 250, 0.28);
-  background: rgba(167, 139, 250, 0.10);
-}
-
-/* Pack tile tint override */
-.home-section--pmtools .pack-grid .pack-tile {
-  background:
-    radial-gradient(900px 260px at 20% 10%, rgba(167, 139, 250, 0.14), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-}
-
-/* Slightly stronger hover effect for featured section */
-.home-section--pmtools .pack-grid .pack-tile:hover {
-  border-color: rgba(167, 139, 250, 0.28);
-  box-shadow:
-    0 18px 44px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(167, 139, 250, 0.18);
-}
-
-/* Make the LIVE chip slightly more premium */
-.home-section--pmtools .pack-chip:not(.pack-chip-muted) {
-  background: rgba(167, 139, 250, 0.18);
-  border-color: rgba(167, 139, 250, 0.32);
-}
-
-/* Subtle bottom divider for separation */
-.home-section--pmtools::after {
-  content: "";
-  display: block;
-  margin-top: 46px;
-  height: 1px;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(148, 163, 184, 0.20),
-      transparent);
-}
-
-/* ==========================================================
-   Work bucket: Subtle differentiation for Series cards
-   ========================================================== */
-
-.bucket-card--series {
-  position: relative;
-  border-color: rgba(167, 139, 250, 0.22);
-  /* gentle violet identity */
-  background:
-    radial-gradient(800px 260px at 15% 10%, rgba(167, 139, 250, 0.14), transparent 60%),
-    radial-gradient(800px 260px at 85% 20%, rgba(34, 211, 238, 0.10), transparent 60%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
-}
-
-/* Small top accent line – premium but quiet */
-.bucket-card--series::before {
-  content: "";
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  top: 10px;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg,
-      rgba(167, 139, 250, 0.90),
-      rgba(34, 211, 238, 0.75),
-      rgba(167, 139, 250, 0.35));
-  opacity: 0.55;
-  pointer-events: none;
-}
-
-/* Slightly more “lift” on hover than regular reflection cards */
-.bucket-card--series:hover {
-  border-color: rgba(167, 139, 250, 0.32);
-  box-shadow:
-    0 18px 44px rgba(0, 0, 0, 0.55),
-    0 0 0 1px rgba(167, 139, 250, 0.16);
-}
-
-/* ==========================================================
-   THEME OVERRIDE — Almond Silk / Rosy Taupe / Berry Crush / Burgundy / Rich Mahogany
-   Paste at the END of assets/style.css
-   ========================================================== */
-
-:root {
-  /* Your palette */
-  --almond-silk: #ebd4cbff;
-  --rosy-taupe: #da9f93ff;
-  --berry-crush: #b6465fff;
-  --burgundy: #890620ff;
-  --rich-mahogany: #2c0703ff;
-
-  /* Site tokens (mapped carefully for readability) */
-  --bg: var(--rich-mahogany);
-  --bg-2: #210503;
-  /* slightly deeper variant */
-  --surface: rgba(235, 212, 203, 0.06);
-  --surface-2: rgba(235, 212, 203, 0.08);
-  --surface-3: rgba(235, 212, 203, 0.05);
-
-  --ink: var(--almond-silk);
-  --muted: rgba(235, 212, 203, 0.78);
-  --muted-2: rgba(235, 212, 203, 0.62);
-
-  --border: rgba(235, 212, 203, 0.18);
-  --border-2: rgba(235, 212, 203, 0.26);
-
-  /* Accents */
-  --a1: var(--berry-crush);
-  --a2: var(--rosy-taupe);
-  --a3: var(--burgundy);
-
-  --link: var(--rosy-taupe);
-  --link-hover: var(--almond-silk);
-
-  --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.40);
-  --shadow-md: 0 16px 44px rgba(0, 0, 0, 0.52);
-  --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.66);
-}
-
-/* Global background: warm mahogany with subtle rosy glow */
-body {
-  background:
-    radial-gradient(1000px 600px at 25% 10%, rgba(137, 6, 32, 0.25), transparent 60%),
-    radial-gradient(900px 500px at 75% 20%, rgba(182, 70, 95, 0.18), transparent 60%),
-    linear-gradient(180deg, #120303, #0c0202);
-  color: var(--almond-silk);
-}
-
-a {
-  color: var(--link);
-}
-
-a:hover {
-  color: var(--link-hover);
-}
-
-/* Nav: slightly warmer surface, still glassy */
-nav {
-  background: rgba(18, 3, 3, 0.85);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
-}
-
-nav a.logo {
-  color: var(--almond-silk);
-}
-
-nav a {
-  color: rgba(235, 212, 203, 0.86);
-}
-
-nav a:hover {
-  color: var(--almond-silk);
-}
-
-/* Hero: warm editorial wash */
-.hero {
-  background:
-    radial-gradient(850px 320px at 22% 20%, rgba(218, 159, 147, 0.18), transparent 60%),
-    radial-gradient(720px 280px at 78% 30%, rgba(182, 70, 95, 0.14), transparent 55%),
-    linear-gradient(180deg, rgba(44, 7, 3, 0.92), rgba(33, 5, 3, 0.92));
-  border-bottom: 1px solid var(--border);
-}
-
-.hero h1 {
-  color: var(--almond-silk);
-}
-
-.hero .subtitle {
-  color: var(--muted);
-}
-
-/* Buttons: berry / taupe */
-.btn-primary {
-  color: var(--almond-silk);
-  background: linear-gradient(135deg, rgba(182, 70, 95, 0.95), rgba(137, 6, 32, 0.95));
-  border-color: rgba(182, 70, 95, 0.30);
-}
-
-.btn-secondary {
-  background: rgba(235, 212, 203, 0.06);
-  color: rgba(235, 212, 203, 0.92);
-  border-color: rgba(235, 212, 203, 0.18);
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-  box-shadow: var(--shadow-md);
-}
-
-/* Section icons: warm glass */
-.section-icon {
-  background: rgba(235, 212, 203, 0.06);
-  border-color: rgba(235, 212, 203, 0.18);
-  color: rgba(235, 212, 203, 0.88);
-}
-
-/* Cards / tiles: warm surface */
-.content-card,
-.bucket,
-.bucket-card,
-.pack-tile,
-.story,
-.post {
-  border-color: var(--border);
-}
-
-/* Pack tiles: subtle rosy glow */
-.pack-tile {
-  background:
-    radial-gradient(900px 260px at 20% 10%, rgba(218, 159, 147, 0.14), transparent 60%),
-    linear-gradient(180deg, rgba(235, 212, 203, 0.06), rgba(235, 212, 203, 0.04));
-}
-
-.pack-tile:hover {
-  border-color: var(--border-2);
-  box-shadow: var(--shadow-md);
-}
-
-/* Chips */
-.pack-chip {
-  border-color: rgba(218, 159, 147, 0.28);
-  background: rgba(218, 159, 147, 0.14);
-  color: rgba(235, 212, 203, 0.92);
-}
-
-.pack-chip-muted {
-  background: rgba(235, 212, 203, 0.10);
-  border-color: rgba(235, 212, 203, 0.16);
-}
-
-/* Tags: map each tag family to your palette */
-.tag {
-  background: rgba(235, 212, 203, 0.06);
-  border-color: rgba(235, 212, 203, 0.18);
-  color: rgba(235, 212, 203, 0.92);
-}
-
-.tag-work {
-  background: rgba(218, 159, 147, 0.16);
-  border-color: rgba(218, 159, 147, 0.28);
-}
-
-.tag-pm {
-  background: rgba(182, 70, 95, 0.18);
-  border-color: rgba(182, 70, 95, 0.30);
-}
-
-.tag-digital {
-  background: rgba(137, 6, 32, 0.18);
-  border-color: rgba(137, 6, 32, 0.30);
-}
-
-.tag-hybrid {
-  background: rgba(235, 212, 203, 0.10);
-  border-color: rgba(235, 212, 203, 0.22);
-}
-
-/* Series badge: warm shimmer */
-.series-badge {
-  color: rgba(235, 212, 203, 0.92);
-  background: rgba(235, 212, 203, 0.06);
-  border-color: rgba(235, 212, 203, 0.18);
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.40),
-    0 0 0 1px rgba(218, 159, 147, 0.14);
-}
-
-.series-badge::before {
-  background: radial-gradient(circle at 35% 35%,
-      rgba(218, 159, 147, 0.95),
-      rgba(182, 70, 95, 0.85));
-  box-shadow: 0 0 0 3px rgba(218, 159, 147, 0.12);
-}
-
-/* Post accents: swap the old neon gradients to warm tones */
-.post h1::after {
-  background: linear-gradient(90deg, var(--rosy-taupe), var(--berry-crush), var(--burgundy));
-}
-
-.post h2::before {
-  background: linear-gradient(180deg, var(--rosy-taupe), var(--berry-crush));
-}
-
-/* Blockquote: warm, readable */
-.post blockquote {
-  border-color: rgba(235, 212, 203, 0.18);
-  background: linear-gradient(135deg,
-      rgba(218, 159, 147, 0.18),
-      rgba(182, 70, 95, 0.14),
-      rgba(137, 6, 32, 0.14));
-}
-
-/* Inline CTA */
-.inline-cta {
-  background: rgba(235, 212, 203, 0.06);
-  border-color: rgba(235, 212, 203, 0.18);
-  color: rgba(235, 212, 203, 0.92);
-}
-
-.inline-cta:hover {
-  background: rgba(235, 212, 203, 0.08);
-  color: var(--almond-silk);
-}
-
-/* Footer */
-footer {
-  color: rgba(235, 212, 203, 0.62);
-  border-top: 1px solid var(--border);
-  background: rgba(44, 7, 3, 0.55);
-}
-
-/* Home section identity tweaks to match new palette */
-.home-section--resources .section-icon {
-  border-color: rgba(218, 159, 147, 0.30);
-  background: rgba(218, 159, 147, 0.12);
-}
-
-.home-section--stories .section-icon {
-  border-color: rgba(182, 70, 95, 0.30);
-  background: rgba(182, 70, 95, 0.12);
-}
-
-.home-section--pmtools .section-icon {
-  border-color: rgba(137, 6, 32, 0.34);
-  background: rgba(137, 6, 32, 0.14);
-}
-
-/* Risk / score pills (if used): shift to warm RAG */
-.rag-green,
-.score-green {
-  background: rgba(218, 159, 147, 0.14);
-  border-color: rgba(218, 159, 147, 0.28);
-}
-
-.rag-amber,
-.score-amber {
-  background: rgba(182, 70, 95, 0.16);
-  border-color: rgba(182, 70, 95, 0.30);
-}
-
-.rag-red,
-.score-red {
-  background: rgba(137, 6, 32, 0.18);
-  border-color: rgba(137, 6, 32, 0.34);
+  .about-bubble::before {
+    animation: none !important;
+  }
 }
