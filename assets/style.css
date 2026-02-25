@@ -1754,3 +1754,273 @@ footer {
     0 18px 44px rgba(0, 0, 0, 0.55),
     0 0 0 1px rgba(167, 139, 250, 0.16);
 }
+
+/* ==========================================================
+   THEME OVERRIDE — Almond Silk / Rosy Taupe / Berry Crush / Burgundy / Rich Mahogany
+   Paste at the END of assets/style.css
+   ========================================================== */
+
+:root {
+  /* Your palette */
+  --almond-silk: #ebd4cbff;
+  --rosy-taupe: #da9f93ff;
+  --berry-crush: #b6465fff;
+  --burgundy: #890620ff;
+  --rich-mahogany: #2c0703ff;
+
+  /* Site tokens (mapped carefully for readability) */
+  --bg: var(--rich-mahogany);
+  --bg-2: #210503;
+  /* slightly deeper variant */
+  --surface: rgba(235, 212, 203, 0.06);
+  --surface-2: rgba(235, 212, 203, 0.08);
+  --surface-3: rgba(235, 212, 203, 0.05);
+
+  --ink: var(--almond-silk);
+  --muted: rgba(235, 212, 203, 0.78);
+  --muted-2: rgba(235, 212, 203, 0.62);
+
+  --border: rgba(235, 212, 203, 0.18);
+  --border-2: rgba(235, 212, 203, 0.26);
+
+  /* Accents */
+  --a1: var(--berry-crush);
+  --a2: var(--rosy-taupe);
+  --a3: var(--burgundy);
+
+  --link: var(--rosy-taupe);
+  --link-hover: var(--almond-silk);
+
+  --shadow-sm: 0 10px 28px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 16px 44px rgba(0, 0, 0, 0.52);
+  --shadow-lg: 0 28px 80px rgba(0, 0, 0, 0.66);
+}
+
+/* Global background: warm mahogany with subtle rosy glow */
+body {
+  background:
+    radial-gradient(900px 520px at 18% 10%, rgba(218, 159, 147, 0.18), rgba(218, 159, 147, 0) 60%),
+    radial-gradient(900px 520px at 82% 24%, rgba(182, 70, 95, 0.14), rgba(182, 70, 95, 0) 60%),
+    radial-gradient(900px 520px at 55% 95%, rgba(137, 6, 32, 0.12), rgba(137, 6, 32, 0) 60%),
+    linear-gradient(180deg, var(--bg), var(--bg-2));
+  color: var(--ink);
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Nav: slightly warmer surface, still glassy */
+nav {
+  background: rgba(44, 7, 3, 0.72);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+}
+
+nav a.logo {
+  color: var(--almond-silk);
+}
+
+nav a {
+  color: rgba(235, 212, 203, 0.86);
+}
+
+nav a:hover {
+  color: var(--almond-silk);
+}
+
+/* Hero: warm editorial wash */
+.hero {
+  background:
+    radial-gradient(850px 320px at 22% 20%, rgba(218, 159, 147, 0.18), transparent 60%),
+    radial-gradient(720px 280px at 78% 30%, rgba(182, 70, 95, 0.14), transparent 55%),
+    linear-gradient(180deg, rgba(44, 7, 3, 0.92), rgba(33, 5, 3, 0.92));
+  border-bottom: 1px solid var(--border);
+}
+
+.hero h1 {
+  color: var(--almond-silk);
+}
+
+.hero .subtitle {
+  color: var(--muted);
+}
+
+/* Buttons: berry / taupe */
+.btn-primary {
+  color: var(--almond-silk);
+  background: linear-gradient(135deg, rgba(182, 70, 95, 0.95), rgba(137, 6, 32, 0.95));
+  border-color: rgba(182, 70, 95, 0.30);
+}
+
+.btn-secondary {
+  background: rgba(235, 212, 203, 0.06);
+  color: rgba(235, 212, 203, 0.92);
+  border-color: rgba(235, 212, 203, 0.18);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Section icons: warm glass */
+.section-icon {
+  background: rgba(235, 212, 203, 0.06);
+  border-color: rgba(235, 212, 203, 0.18);
+  color: rgba(235, 212, 203, 0.88);
+}
+
+/* Cards / tiles: warm surface */
+.content-card,
+.bucket,
+.bucket-card,
+.pack-tile,
+.story,
+.post {
+  border-color: var(--border);
+}
+
+/* Pack tiles: subtle rosy glow */
+.pack-tile {
+  background:
+    radial-gradient(900px 260px at 20% 10%, rgba(218, 159, 147, 0.14), transparent 60%),
+    linear-gradient(180deg, rgba(235, 212, 203, 0.06), rgba(235, 212, 203, 0.04));
+}
+
+.pack-tile:hover {
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-md);
+}
+
+/* Chips */
+.pack-chip {
+  border-color: rgba(218, 159, 147, 0.28);
+  background: rgba(218, 159, 147, 0.14);
+  color: rgba(235, 212, 203, 0.92);
+}
+
+.pack-chip-muted {
+  background: rgba(235, 212, 203, 0.10);
+  border-color: rgba(235, 212, 203, 0.16);
+}
+
+/* Tags: map each tag family to your palette */
+.tag {
+  background: rgba(235, 212, 203, 0.06);
+  border-color: rgba(235, 212, 203, 0.18);
+  color: rgba(235, 212, 203, 0.92);
+}
+
+.tag-work {
+  background: rgba(218, 159, 147, 0.16);
+  border-color: rgba(218, 159, 147, 0.28);
+}
+
+.tag-pm {
+  background: rgba(182, 70, 95, 0.18);
+  border-color: rgba(182, 70, 95, 0.30);
+}
+
+.tag-digital {
+  background: rgba(137, 6, 32, 0.18);
+  border-color: rgba(137, 6, 32, 0.30);
+}
+
+.tag-hybrid {
+  background: rgba(235, 212, 203, 0.10);
+  border-color: rgba(235, 212, 203, 0.22);
+}
+
+/* Series badge: warm shimmer */
+.series-badge {
+  color: rgba(235, 212, 203, 0.92);
+  background: rgba(235, 212, 203, 0.06);
+  border-color: rgba(235, 212, 203, 0.18);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.40),
+    0 0 0 1px rgba(218, 159, 147, 0.14);
+}
+
+.series-badge::before {
+  background: radial-gradient(circle at 35% 35%,
+      rgba(218, 159, 147, 0.95),
+      rgba(182, 70, 95, 0.85));
+  box-shadow: 0 0 0 3px rgba(218, 159, 147, 0.12);
+}
+
+/* Post accents: swap the old neon gradients to warm tones */
+.post h1::after {
+  background: linear-gradient(90deg, var(--rosy-taupe), var(--berry-crush), var(--burgundy));
+}
+
+.post h2::before {
+  background: linear-gradient(180deg, var(--rosy-taupe), var(--berry-crush));
+}
+
+/* Blockquote: warm, readable */
+.post blockquote {
+  border-color: rgba(235, 212, 203, 0.18);
+  background: linear-gradient(135deg,
+      rgba(218, 159, 147, 0.18),
+      rgba(182, 70, 95, 0.14),
+      rgba(137, 6, 32, 0.14));
+}
+
+/* Inline CTA */
+.inline-cta {
+  background: rgba(235, 212, 203, 0.06);
+  border-color: rgba(235, 212, 203, 0.18);
+  color: rgba(235, 212, 203, 0.92);
+}
+
+.inline-cta:hover {
+  background: rgba(235, 212, 203, 0.08);
+  color: var(--almond-silk);
+}
+
+/* Footer */
+footer {
+  color: rgba(235, 212, 203, 0.62);
+  border-top: 1px solid var(--border);
+  background: rgba(44, 7, 3, 0.55);
+}
+
+/* Home section identity tweaks to match new palette */
+.home-section--resources .section-icon {
+  border-color: rgba(218, 159, 147, 0.30);
+  background: rgba(218, 159, 147, 0.12);
+}
+
+.home-section--stories .section-icon {
+  border-color: rgba(182, 70, 95, 0.30);
+  background: rgba(182, 70, 95, 0.12);
+}
+
+.home-section--pmtools .section-icon {
+  border-color: rgba(137, 6, 32, 0.34);
+  background: rgba(137, 6, 32, 0.14);
+}
+
+/* Risk / score pills (if used): shift to warm RAG */
+.rag-green,
+.score-green {
+  background: rgba(218, 159, 147, 0.14);
+  border-color: rgba(218, 159, 147, 0.28);
+}
+
+.rag-amber,
+.score-amber {
+  background: rgba(182, 70, 95, 0.16);
+  border-color: rgba(182, 70, 95, 0.30);
+}
+
+.rag-red,
+.score-red {
+  background: rgba(137, 6, 32, 0.18);
+  border-color: rgba(137, 6, 32, 0.34);
+}
